@@ -1,0 +1,21 @@
+.Creditos { 
+    display: block;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    margin: 0 auto;
+    padding: 10px;
+    z-index: 999;
+}
+.Creditos h3 {
+    font-family: 'Geosanslight', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.Creditos a {
+    text-decoration: none;
+    color: white;
+}
