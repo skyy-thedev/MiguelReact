@@ -1,0 +1,67 @@
+@media (min-width: 300px) and (max-width: 768px) {
+    .localizacao {
+        margin-top: -50px;
+        margin-bottom: 100px;
+        width: 100%;
+        height: 140px;
+        background: linear-gradient(90deg, #022031, #297D94);
+        font-family: 'Geosanslight', sans-serif;
+        text-align: center;
+        color: white;
+    }
+    .localizacao h2 {
+        margin-top: 20px;
+        padding-top: 15px;
+        font-size: 2em;
+    }
+    .localizacao h3 {
+        font-size: 1.5em;
+        margin: -15px 50px 0px 50px;
+    }
+}
+
+/* DESKTOP HALF HD QUERY */
+@media (min-width: 769px) and (max-width: 1366px) {
+    .localizacao {
+        margin-top: -50px;
+        margin-bottom: 100px;
+        width: 100%;
+        height: 140px;
+        background: linear-gradient(90deg, #022031, #297D94);
+        font-family: 'Geosanslight', sans-serif;
+        text-align: center;
+        color: white;
+    }
+    .localizacao h2 {
+        margin-top: 20px;
+        padding-top: 15px;
+        font-size: 2em;
+    }
+    .localizacao h3 {
+        font-size: 1.5em;
+        margin: -15px 50px 0px 50px;
+    }
+}
+
+/* DESKTOP QUERY */
+@media (min-width: 1367px) and (max-width: 1920px) {
+    .localizacao {
+        margin-top: -50px;
+        margin-bottom: 100px;
+        width: 100%;
+        height: 125px;
+        background: linear-gradient(90deg, #022031, #297D94);
+        font-family: 'Geosanslight', sans-serif;
+        text-align: center;
+        color: white;
+    }
+    .localizacao h2 {
+        margin-top: 20px;
+        padding-top: 15px;
+        font-size: 2em;
+    }
+    .localizacao h3 {
+        font-size: 1.5em;
+        margin: -15px 50px 0px 50px;
+    }
+}

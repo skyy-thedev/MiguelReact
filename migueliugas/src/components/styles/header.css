@@ -14,7 +14,6 @@
       pointer-events: all;
       z-index: 9;
     }
-  
     nav ul { 
       position: absolute;
       top: 40px;
@@ -43,7 +42,7 @@
       flex-direction: column;
       justify-content: space-between;
       margin-top: 20px;
-      margin-right: -230px;
+      margin-right: -210px;
       width: 30px;
       height: 25px;
       z-index: 10;

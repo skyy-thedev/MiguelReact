@@ -5,7 +5,6 @@
     bottom: 0px;
     text-align: center;
     background-color: rgb(0, 0, 0);
-    margin: 0 auto;
     padding: 10px;
     z-index: 999;
 }
@@ -18,4 +17,8 @@
 .Creditos a {
     text-decoration: none;
     color: white;
+    transition: 0.5s ease;
+}
+.Creditos a:hover {
+    color: #06A1B4;
 }

@@ -45,8 +45,8 @@ const Header = () => {
         </div>
         <nav className={menuOpen ? 'open' : ''}>
           <ul>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#localizacao">Localização</a></li>
+            <li><a href="#Sobre">Sobre</a></li>
+            <li><a href="#Localizacao">Localização</a></li>
             <li><a href="https://hotmart.com/pt-br/marketplace/produtos?initialSelectedCategory=&q=Miguel+Iugas">Mentorias e Cursos</a></li>
             <li><a href="#services">Agendamento</a></li>
 

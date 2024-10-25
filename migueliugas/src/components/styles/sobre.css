@@ -1,0 +1,154 @@
+@media (min-width: 300px) and (max-width: 768px) {
+    #Sobre {
+        padding: 25px 20px;
+        text-align: center;
+        justify-content: center;
+        height: 100%;
+        margin-bottom: 50px;
+    }
+    #Sobre h1 {
+        font-size: 2em;
+        margin-bottom: -20px;
+    }
+    #Sobre h2 {
+        font-size: 1.5em;
+    }
+    #Sobre h3 {
+        text-shadow: #022031;
+        color: #297D94;
+        font-size: 1em;
+        margin-left: 3px;
+        margin-bottom: -20px;
+    }
+    .foto {
+        background-image: url(../../assets/body/userpic.jpg);
+        background-size: 50vh;
+        background-position-x: -50px;
+        margin-top: 10px;
+        margin-left: 35px;
+        border-radius: 150px;
+        height: 300px;
+        width: 300px;
+        position: relative;
+        filter: drop-shadow( 3px 3px 10px black);
+        transition: transform 1s ease, left 1s ease
+    }
+    .foto::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background: linear-gradient(180deg, #02203164, #297d9464);
+        filter: blur(2px); /* Aplica desfoque para simular a sombra */
+        opacity: 0.6; /* Controla a opacidade da sombra */
+        border-radius: 300px; /* Ajuste para suavizar bordas */
+    }
+    .foto:hover {
+        transform: rotateY(180deg);
+        filter: drop-shadow( 3px 3px 10px black);
+    }
+    .destaqueSobre {
+        font-family: 'Augustus', 'sans serif';
+        color: #022031;
+    } 
+    .textoSobre {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 22px;
+        color: #022031;
+        padding: 10px;
+        text-align: center;
+        justify-content: center;
+    } 
+}
+
+/* DESKTOP HALF HD QUERY */
+@media (min-width: 769px) and (max-width: 1366px) {
+
+}
+
+/* DESKTOP QUERY */
+@media (min-width: 1367px) and (max-width: 1920px) {
+    .Container {
+        display: flex;
+    }
+        .content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #Sobre {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        padding: 10px 20px 40px 20px;
+        width: 97%;
+        height: 100%;
+        margin-bottom: 50px;
+        text-align: left;
+        justify-content: left;
+        align-items: left;
+    }
+    #Sobre h1 {
+        font-size: 2.5em;
+        margin-bottom: -10px;
+        margin-left: -25px;
+    }
+    #Sobre h2 {
+        font-size: 1.5em;
+    }
+    #Sobre h3 {
+        text-shadow: #022031;
+        color: #297D94;
+        font-size: 1em;
+        margin-left: 3px;
+        margin-bottom: -10px;
+    }
+    .destaqueSobre {
+        font-family: 'Augustus', 'sans serif';
+        color: #022031;
+    } 
+    .textoSobre {
+        font-family: 'Geosanslight', sans-serif;
+        color: #022031;
+        font-size: 24px;
+        font-weight: 200;
+        text-indent: center;
+        text-align: center;
+        position: relative;
+        margin: 0px 130px;
+        transition: transform 1s ease, left 1s ease;
+    }
+    .foto {
+        position: relative;
+        background-image: url(../../assets/body/userpic.jpg);
+        background-size: 50vh;
+        width: 110vh;
+        height: 45vh;
+        margin-top: 100px;
+        margin-left: 50px;
+        margin-right: -50px;
+        border-radius: 300px;
+        transform: rotateY(180deg);
+        filter: drop-shadow( 5px 5px 10px black);
+        transition: transform 1s ease-in-out;
+        z-index: 1;
+    }
+    .foto::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background: linear-gradient(180deg, #02203164, #297d9464);
+        filter: blur(5px); /* Aplica desfoque para simular a sombra */
+        opacity: 0.6; /* Controla a opacidade da sombra */
+        border-radius: 300px; /* Ajuste para suavizar bordas */
+    }
+    .foto:hover {
+        transform: rotateY(360deg);
+    }
+}
