@@ -1,0 +1,387 @@
+/*  SMARTPHONE PORTRAIT QUERY*/
+@media (min-width: 300px) and (max-width: 768px) {
+    .header {
+      position: fixed;
+      transition: background-color 1s ease;
+      background-color: rgb(0, 0, 0);
+      height: 65px;
+      top: 0;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 25px;
+      letter-spacing: 3px;
+      filter: drop-shadow(1px 1px 2px black);
+      width: 100vw;
+      pointer-events: all;
+      z-index: 9;
+    }
+  
+    nav ul { 
+      position: absolute;
+      top: 40px;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.9);
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    nav.open ul {
+      transform: translateX(0);
+    }
+    
+    nav ul li {
+      margin: 20px 0;
+    }
+  
+    .menu-toggle {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 20px;
+      margin-right: -230px;
+      width: 30px;
+      height: 25px;
+      z-index: 10;
+    }
+    
+    .menu-toggle div {
+      width: 100%;
+      height: 4px;
+      background-color: #fff;
+      transition: 0.3s ease;
+    }
+    
+    nav ul li a {
+      color: #fff;
+      font-family: 'Geosanslight', sans-serif;
+      text-decoration: none;
+      padding: 10px 10px;
+      cursor: pointer;
+      display: inline-block;
+      transition: 0.9s all;
+      transform: 1s ease;
+    }
+    
+    nav ul li a:hover {
+      color: #06A1B4;
+      transform: translateY(-5px);
+      border-radius: 155px;
+      filter: drop-shadow(10px 5px 1px rgba(0, 0, 0, 0.741));
+      cursor: pointer;
+    }
+    #contato-btn {
+      font-family: 'Geosanslight', sans-serif;
+      font-size: 25px;
+      letter-spacing: 3px;
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 155px;
+      border-color: #00000000;
+      color: #fff;
+      padding: 8px 8px;
+      cursor: pointer;
+      display: inline-block;
+      transition: 0.9s all;
+      transform: 1s ease;
+    }
+    
+    #contato-btn:hover {
+      color: #06A1B4;
+      transform: translateY(-5px);
+      border-radius: 155px;
+      filter: drop-shadow(10px 5px 1px rgba(0, 0, 0, 0.741));
+    }
+    
+    .hidden {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .visible {
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+  
+    #social-icons {
+      flex-direction: column;
+    }
+  
+    #social-icons img {
+      width: 48px;
+      height: 48px;
+      margin-left: -20px;
+      cursor: pointer;
+    }
+    #social-icons a {
+      width: 10px;
+      height: 10px;
+      padding: 30px;
+      cursor: pointer;
+      display: inline-block;
+      justify-content: space-between;
+      margin: -10px 10px;
+    }
+    
+    .ContainerFlex {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    #logo {
+      margin-top: 0px;
+      margin-left: -15px;
+      padding: 0px 10px;
+      width: 120px;
+      height: 60px;
+      transition: 1s all;
+    }
+    #logo:hover {
+      transform: translateY(-10px);
+      filter: drop-shadow(3px 3px 0px black);
+    }
+  }
+  /*  SMARTPHONE LANDSCAPE QUERY*/
+  @media (min-width: 768px) and (max-width: 1099px) {
+    
+  }
+  /*  DESKTOP HALF HD QUERY*/
+  @media (min-width: 1100px) and (max-width: 1366px) {
+    .header {
+      position: sticky;
+      transition: background-color 1s ease;
+      background-color: rgba(0, 0, 0, 0);
+      height: 60px;
+      top: 0;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 16px;
+      letter-spacing: 3px;
+      filter: drop-shadow(1px 1px 2px black);
+      width: 100%;
+      pointer-events: all;
+      z-index: 9;
+    }
+    
+    .hidden {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .visible {
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    #social-icons img {
+      width: 22px;
+      height: 22px;
+      margin-left: -15px;
+      cursor: pointer;
+    }
+    #social-icons a {
+      width: 10px;
+      height: 10px;
+      padding: 10px;
+      cursor: pointer;
+      display: inline-block;
+      justify-content: space-between;
+      margin: -10px 10px;
+    }
+    
+    .ContainerFlex {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    #logo {
+      margin-top: -5px;
+      margin-left: 160px;
+      padding: 0px 10px;
+      width: 68px;
+      height: 68px;
+      transition: 1s all;
+    }
+    #logo:hover {
+      transform: translateY(-10px);
+      filter: drop-shadow(3px 3px 0px black);
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 0px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+    
+    nav ul li {
+      margin: 0 10px;
+      cursor: pointer;
+    }
+    
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 10px;
+      cursor: pointer;
+      display: inline-block;
+      transition: 0.9s all;
+      transform: 1s ease;
+    }
+    
+    nav ul li a:hover {
+      color: rgb(255, 255, 255);
+      transform: translateY(-5px);
+      border-radius: 155px;
+      filter: drop-shadow(10px 5px 1px rgba(0, 0, 0, 0.741));
+      cursor: pointer;
+    }
+    #contato-btn {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 18px;
+      letter-spacing: 3px;
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 155px;
+      border-color: #00000000;
+      color: #fff;
+      padding: 8px 8px;
+      cursor: pointer;
+      display: inline-block;
+      transition: 0.9s all;
+      transform: 1s ease;
+    }
+    
+    #contato-btn:hover {
+      color: rgb(255, 255, 255);
+      transform: translateY(-5px);
+      border-radius: 155px;
+      filter: drop-shadow(10px 5px 1px rgba(0, 0, 0, 0.741));
+    }
+  }
+  @media (min-width: 1367px) and (max-width: 1920px) {
+    .header {
+      position: sticky;
+      transition: background-color 1s ease;
+      background-color: rgb(0, 0, 0);
+      height: 80px;
+      top: 0;
+      font-family: 'Geosanslight', sans-serif;
+      font-size: 18px;
+      letter-spacing: 3px;
+      filter: drop-shadow(1px 1px 2px black);
+      width: 100%;
+      pointer-events: all;
+      z-index: 9;
+    }
+    
+    .hidden {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .visible {
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    #social-icons img {
+      width: 28px;
+      height: 28px;
+      margin-top: 5px;
+      margin-left: 0px;
+      cursor: pointer;
+    }
+    #social-icons a {
+      width: 10px;
+      height: 10px;
+      padding: 10px;
+      cursor: pointer;
+      display: inline-block;
+      justify-content: space-between;
+      margin: -10px 10px;
+      transition: 0.5s ease;
+    }
+    #social-icons a:hover {
+      transform: translateY(-5px);
+    }
+    .ContainerFlex {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    #logo {
+      margin-top: 0px;
+      margin-left: 160px;
+      padding: 0px 10px;
+      width: 150px;
+      height: 80px;
+      transition: 1s all;
+    }
+    #logo:hover {
+      transform: translateY(-5px);
+      filter: drop-shadow(3px 3px 0px black);
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 50px;
+      margin-top: 25px;
+      cursor: pointer;
+    }
+    
+    nav ul li {
+      margin: 0 10px;
+      cursor: pointer;
+    }
+    
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 10px;
+      cursor: pointer;
+      display: inline-block;
+      transition: 0.9s all;
+      transform: 1s ease;
+    }
+    
+    nav ul li a:hover {
+      color: #06A1B4;
+      transform: translateY(-5px);
+      border-radius: 155px;
+      filter: drop-shadow(10px 5px 1px rgba(0, 0, 0, 0.741));
+      cursor: pointer;
+    }
+    #contato-btn {
+      font-family: 'Geosanslight', sans-serif;
+      font-size: 18px;
+      letter-spacing: 3px;
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 155px;
+      border-color: #00000000;
+      color: #fff;
+      padding: 8px 8px;
+      cursor: pointer;
+      display: inline-block;
+      transition: 0.9s all;
+      transform: 1s ease;
+    }
+    
+    #contato-btn:hover {
+      color: #06A1B4;
+      transform: translateY(-5px);
+      filter: drop-shadow(10px 5px 1px rgba(0, 0, 0, 0.741));
+    }
+  }
