@@ -1,27 +1,17 @@
-import Header from './components/header.jsx';
-import Main from './components/main.jsx';
-import HeroSlider from './components/heroSlider.jsx';
-import Localizacao from './components/localizacao.jsx';
-import Sobre from './components/sobre.jsx';
-import Footer from './components/footer.jsx';
-import Locations from './components/locations.jsx';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './screens/home'
+import Login from './screens/login'
 
 function App() {
   return (
     <div className="App">
-        <Header />
-
-        <Main />
-
-        <HeroSlider />
-
-        <Sobre />
-
-        <Localizacao />
-
-        <Locations />
-
-        <Footer />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </Router>
     </div>
   );
 }
