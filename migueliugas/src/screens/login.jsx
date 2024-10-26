@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/header.jsx';
 import Footer from '../components/footer.jsx';
 
-const Home = () => {
+const Login = () => {
   return (
     <>
       <Header />
@@ -11,4 +11,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Login;
