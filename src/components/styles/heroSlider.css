@@ -231,7 +231,7 @@
 @media (min-width: 1367px) and (max-width: 1920px) {
     .hero-slider{
         background-color: #000000;
-        margin-top: 205px;
+        margin-top: 215px;
         height: 50vh;
         overflow: hidden;
         font-family: 'GeosansLight', sans-serif;
@@ -321,6 +321,7 @@
     
     .hero-slider .flickity-page-dots{
         bottom: 30px;
+        z-index: 4;
     }
     
     .hero-slider .flickity-page-dots .dot{
