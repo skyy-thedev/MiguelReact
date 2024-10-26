@@ -4,7 +4,7 @@
 @media (min-width: 300px) and (max-width: 768px) {
     .hero-slider{
         background-color: #000000;
-        margin-top: 131px;
+        margin-top: 150px;
         width: 100vw;
         height: 50vh;
         overflow: hidden;
@@ -33,12 +33,12 @@
         font-weight: 200;
         font-style: italic;
         letter-spacing: 4px;
+        position: relative;
         text-align: center;
-        top: 140px;
-        right: 65px;
+        top: 45px;
+        right: 0px;
         color: rgba(255, 255, 255, 0.7);
         background-color: #00000000;
-        color: rgba(255, 255, 255, 0.7);
     }
     
     .hero-slider .carousel-cell .info-container .text{
@@ -87,14 +87,14 @@
     }
     
     .hero-slider .flickity-page-dots{
-        bottom: 30px;
+        bottom: 45px;
     }
     
     .hero-slider .flickity-page-dots .dot{
         margin-bottom: -35px;
-        width: 40px;
+        width: 10px;
         height: 10px;
-        background: rgba(255, 255, 255, 0.865);
+        background: rgba(58, 58, 58, 0.865);
         opacity: 1;
         border-radius: 20px;
         transition: all 0.5s ease;
@@ -231,7 +231,7 @@
 @media (min-width: 1367px) and (max-width: 1920px) {
     .hero-slider{
         background-color: #000000;
-        margin-top: 215px;
+        margin-top: 220px;
         height: 50vh;
         overflow: hidden;
         font-family: 'GeosansLight', sans-serif;
@@ -250,7 +250,28 @@
         justify-content: center;
         text-align: center;
     }
-    
+    .hero-slider .carousel-cell::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background: linear-gradient(200deg, #02203164, #297d949f);
+        filter: blur(2px);
+        opacity: 0.6;
+    }
+
+    .hero-slider .carousel-cell:hover {
+        transform: scale(1.07);
+        transition: transform 0.5s ease-in-out;
+    }
+    .hero-slider .carousel-cell:hover .info-container {
+        opacity: 1;
+        transform: scale(1.05);
+        transition: transform 0.5s ease-in-out;
+    }
+
     .hero-slider .carousel-cell .info-container{
         color: #ffffff;
         position: relative;

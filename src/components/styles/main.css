@@ -48,8 +48,17 @@
         text-align: center;
         z-index: 99;
     }
+    .destaque h2 {
+        font-family: 'Geosanslight', sans-serif;
+        color: #022031;
+        font-size: 28px;
+        text-align: center;
+        margin-top: -50px;
+        margin: 0 auto;
+    }
     .destaque img {
         margin-top: 100px;
+        margin-bottom: -50px;
         width: 500px;
         height: 280px;
         transition: 0.5s ease-in-out;

@@ -12,8 +12,13 @@
         margin: 0 auto;
         margin-bottom: 20px;
     }
+
+    .maptitle h3 {
+        font-size: 1.3em;
+    }
+
     .mapframe {
-        width: 80%;
+        width: 75%;
         height: 50%;
         box-shadow: 1px 1px 10px black;
         margin: 0 auto;
@@ -36,7 +41,7 @@
 @media (min-width: 1367px) and (max-width: 1920px) {
     .Containi {
         margin-top: -50px;
-        margin-bottom: 150px;
+        margin-bottom: 120px;
         display: flex;
         flex-direction: row;
     }
@@ -60,6 +65,12 @@
         box-shadow: 1px 1px 50px rgba(41, 125, 148, 0.6);
         text-align: center;
     }
+
+    .map:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+
     .mapframe iframe {
         margin: 0 auto;
         width: 400px;
