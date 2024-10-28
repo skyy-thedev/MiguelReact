@@ -1,16 +1,16 @@
 import React from 'react';
 import Header from '../components/header.jsx';
 import Footer from '../components/footer.jsx';
-import AppLogin from '../components/AppLogin.jsx';
+import AppRegister from '../components/AppRegister.jsx';
 
-const Login = () => {
+const Registrar = () => {
   return (
     <>
       <Header />
-      <AppLogin />
+      <AppRegister />
       <Footer />
     </>
   );
 };
 
-export default Login;
+export default Registrar;

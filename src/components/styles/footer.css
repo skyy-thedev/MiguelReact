@@ -1,25 +1,106 @@
-.Creditos { 
-    display: block;
-    position: fixed;
-    width: 100%;
-    height: 55px;
-    bottom: 0px;
-    text-align: center;
-    background-color: rgb(0, 0, 0);
-    padding: 5px 0 10px 0;
-    z-index: 999;
+@media (min-width: 300px) and (max-width: 400px) {
+    .Creditos { 
+        position: fixed;
+        width: 100%;
+        height: 40px;
+        bottom: 0px;
+        text-align: center;
+        background-color: rgb(0, 0, 0);
+        z-index: 999;
+    }
+    .Creditos h3 {
+        font-family: 'Geosanslight', sans-serif;
+        font-weight: 200;
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+    .Creditos a {
+        text-decoration: none;
+        color: white;
+        transition: 0.5s ease;
+    }
+    .Creditos a:hover {
+        color: #06A1B4;
+    }
 }
-.Creditos h3 {
-    font-family: 'Geosanslight', sans-serif;
-    font-weight: 200;
-    font-size: 16px;
-    letter-spacing: 2px;
+@media (min-width: 401px) and (max-width: 768px) {
+    .Creditos { 
+        position: fixed;
+        width: 100%;
+        height: 40px;
+        bottom: 0px;
+        text-align: center;
+        background-color: rgb(0, 0, 0);
+        z-index: 999;
+    }
+    .Creditos h3 {
+        font-family: 'Geosanslight', sans-serif;
+        font-weight: 200;
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+    .Creditos a {
+        text-decoration: none;
+        color: white;
+        transition: 0.5s ease;
+    }
+    .Creditos a:hover {
+        color: #06A1B4;
+    }
 }
-.Creditos a {
-    text-decoration: none;
-    color: white;
-    transition: 0.5s ease;
+
+@media (min-width: 769px) and (max-width: 1366px) {
+    .Creditos { 
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 50px;
+        bottom: 0px;
+        text-align: center;
+        background-color: rgb(0, 0, 0);
+        z-index: 999;
+    }
+    .Creditos h3 {
+        font-family: 'Geosanslight', sans-serif;
+        font-weight: 200;
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+    .Creditos a {
+        text-decoration: none;
+        color: white;
+        transition: 0.5s ease;
+    }
+    .Creditos a:hover {
+        color: #06A1B4;
+    }
 }
-.Creditos a:hover {
-    color: #06A1B4;
+
+@media (min-width: 1367px) and (max-width: 1920px) {
+    .Creditos { 
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 50px;
+        bottom: 0px;
+        text-align: center;
+        background-color: rgb(0, 0, 0);
+        z-index: 999;
+    }
+    .Creditos h3 {
+        font-family: 'Geosanslight', sans-serif;
+        font-weight: 200;
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+    .Creditos a {
+        text-decoration: none;
+        color: white;
+        transition: 0.5s ease;
+    }
+    .Creditos a:hover {
+        color: #06A1B4;
+    }
 }
+
+

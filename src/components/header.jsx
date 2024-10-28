@@ -52,10 +52,10 @@ const Header = () => {
         <nav className={menuOpen ? 'open' : ''}>
           <ul>
             <li><a href="/Login">Login</a></li>
-            <li><a href="#Sobre">Sobre</a></li>
-            <li><a href="#Localizacao">Localização</a></li>
+            <li><a href="/.#Sobre">Sobre</a></li>
+            <li><a href="/.#Localizacao">Localização</a></li>
             <li>
-              <a onClick={handleSubmenuToggle} href="#mentorias">Mentorias e Cursos</a>
+              <a onClick={handleSubmenuToggle} href="#mentorias">Cursos</a>
               <ul ref={submenuRef} className={`submenu ${submenuOpen ? 'open' : 'closed'}`}>
                   <li><a href="https://hotmart.com/pt-br/marketplace/produtos/suplementacao-endovenosa-e-intramuscular">Mentoria em Suplementação Endovenosa e Intramuscular</a></li>
                   <li><a href="https://hotmart.com/pt-br/marketplace/produtos/prescricoes">Prescrições na Saúde Estética</a></li>
