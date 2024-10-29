@@ -1008,7 +1008,7 @@
 
       header nav ul li {
         position: relative;
-        margin: 0 20px;
+        margin: 0 5px;
       }
 
       /* Estilos padrão do submenu */
@@ -1102,16 +1102,16 @@
     
     #logo {
       margin-top: 0px;
-      margin-left: 160px;
+      margin-left: 100px;
       padding: 0px 10px;
       width: 150px;
       height: 80px;
       transition: 1s all;
-      filter: drop-shadow(0px 0px 1px #022031);
+      filter: drop-shadow(0px -1px 0px white);
     }
     #logo:hover {
       transform: translateY(-5px);
-      filter: drop-shadow(3px 3x 5px #17EAD9);
+      filter: drop-shadow(0px -1px 2px white);
     }
     nav ul {
       list-style-type: none;
@@ -1147,7 +1147,7 @@
       cursor: pointer;
     }
 
-    #header-btn {
+    #submenubtn {
       font-family: 'Geosanslight', sans-serif;
       font-size: 18px;
       letter-spacing: 3px;
@@ -1155,17 +1155,16 @@
       border-radius: 155px;
       border-color: #00000000;
       color: #fff;
-      padding: 100px 8px;
+      padding: 8px 8px;
       cursor: pointer;
       display: inline-block;
       transition: 0.9s all;
       transform: 1s ease;
     }
     
-    #header-btn:hover {
+    #submenubtn:hover {
       color: #06A1B4;
       transform: translateY(-5px);
-      filter: drop-shadow(10px 5px 1px rgba(0, 0, 0, 0.741));
     }
 
     #contato-btn {

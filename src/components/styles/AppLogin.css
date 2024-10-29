@@ -20,6 +20,7 @@
                             /* Estilo do lado esquerdo - homeScreen */
                             .homeScreen {
                                 margin: 50px;
+                                padding: 50px 0px;
                                 background-color: rgba(212, 250, 238, 0);
                                 width: 50%;
                                 min-height: 100%; /* Torna o contêiner flexível em altura */

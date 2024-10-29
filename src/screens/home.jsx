@@ -6,6 +6,7 @@ import Localizacao from '../components/localizacao.jsx';
 import Sobre from '../components/sobre.jsx';
 import Footer from '../components/footer.jsx';
 import Locations from '../components/locations.jsx';
+import Contato from '../components/Contato.jsx';
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Sobre />
       <Localizacao />
       <Locations />
+      <Contato />
       <Footer />
     </>
   );

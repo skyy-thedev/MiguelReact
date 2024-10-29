@@ -22,6 +22,7 @@
                             .homeScreen {
                                 margin: 50px;
                                 background-color: rgba(212, 250, 238, 0);
+                                padding: 50px 0px;
                                 width: 50%;
                                 min-height: 100%; /* Torna o contêiner flexível em altura */
                                 padding-bottom: 20px; /* Ajuste do padding */
@@ -104,7 +105,7 @@
                                 color: #022031;
                                 font-size: 18px;
                                 padding-top: 20px; /* Ajuste para controle de espaçamento */
-                                margin-top: 50px; /* Evita margem negativa */
+                                margin-top: -80px; /* Evita margem negativa */
                                 margin-bottom: 0; /* Remove margem negativa */
                             }
                             

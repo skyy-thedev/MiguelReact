@@ -53,16 +53,14 @@ const Header = () => {
           <ul>
             <li><a href="/Login">Login</a></li>
             <li><a href="/.#Sobre">Sobre</a></li>
-            <li><a href="/.#Localizacao">Localização</a></li>
             <li>
-              <a onClick={handleSubmenuToggle} href="#mentorias">Cursos</a>
+              <button onClick={handleSubmenuToggle} id='submenubtn'>Cursos</button>
               <ul ref={submenuRef} className={`submenu ${submenuOpen ? 'open' : 'closed'}`}>
                   <li><a href="https://hotmart.com/pt-br/marketplace/produtos/suplementacao-endovenosa-e-intramuscular">Mentoria em Suplementação Endovenosa e Intramuscular</a></li>
                   <li><a href="https://hotmart.com/pt-br/marketplace/produtos/prescricoes">Prescrições na Saúde Estética</a></li>
                   <li><a href="https://hotmart.com/pt-br/marketplace/produtos?initialSelectedCategory=&q=Miguel+Iugas">Ver todos</a></li>
               </ul>
             </li>
-            <li><a href="#services">Agendamento</a></li>
             <li>
               <button id='contato-btn' ref={contatoBtnRef}>Contato</button>
             </li>
