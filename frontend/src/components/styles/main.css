@@ -1,0 +1,85 @@
+
+@media (min-width: 300px) and (max-width: 768px) {
+    .destaque {
+        margin-top: -50px;
+        height: 70vw;
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgb(255, 255, 255, 0.5));
+        color: white;
+        justify-content: center;
+        text-align: center;
+        z-index: 99;
+    }
+    .destaque img {
+        margin-top: 150px;
+        width: 360px;
+        height: 220px;
+    }
+}
+
+/* DESKTOP HALF HD QUERY */
+@media (min-width: 769px) and (max-width: 1360px) {
+    .destaque {
+        height: 10vw;
+        margin-top: -80px;
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgb(255, 255, 255, 0.5));
+        color: white;
+        justify-content: center;
+        text-align: center;
+        z-index: 99;
+    }
+    .destaque h2 {
+        font-family: 'Geosanslight', sans-serif;
+        color: #022031;
+        font-size: 28px;
+        text-align: center;
+        margin-top: -50px;
+        margin: 0 auto;
+    }
+    .destaque img {
+        margin-top: 100px;
+        margin-bottom: -50px;
+        width: 500px;
+        height: 280px;
+        transition: 0.5s ease-in-out;
+    }
+    .destaque img:hover {
+        transform: translateY(-15px);
+        filter: drop-shadow(-5px -5px 2px rgb(75, 75, 75));
+    }
+}
+
+
+/* DESKTOP QUERY */
+@media (min-width: 1361px) and (max-width: 1920px) {
+    .destaque {
+        height: 10vw;
+        margin-top: -80px;
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgb(255, 255, 255, 0.5));
+        color: white;
+        justify-content: center;
+        text-align: center;
+        z-index: 99;
+    }
+    .destaque h2 {
+        font-family: 'Geosanslight', sans-serif;
+        color: #022031;
+        font-size: 28px;
+        text-align: center;
+        margin-top: -50px;
+        margin: 0 auto;
+    }
+    .destaque img {
+        margin-top: 100px;
+        margin-bottom: -50px;
+        width: 500px;
+        height: 280px;
+        transition: 0.5s ease-in-out;
+    }
+    .destaque img:hover {
+        transform: translateY(-15px);
+        filter: drop-shadow(-5px -5px 2px rgb(75, 75, 75));
+    }
+}

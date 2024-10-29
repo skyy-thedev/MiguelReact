@@ -1,0 +1,385 @@
+/* Em seu arquivo CSS principal ou no CSS do componente */
+@import '~flickity/dist/flickity.min.css';
+
+@media (min-width: 300px) and (max-width: 768px) {
+    .hero-slider{
+        background-color: #000000;
+        margin-top: 150px;
+        width: 100vw;
+        height: 50vh;
+        overflow: hidden;
+        font-family: 'GeosansLight', sans-serif;
+    }
+
+    .hero-slider .carousel-cell{
+        width: 60vh;
+        height: 50vh;
+        background: no-repeat center/cover;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .hero-slider .carousel-cell .info-container{
+        color: #ffffff;
+        position: relative;
+    }
+    
+    .hero-slider .carousel-cell .info-container .header{
+        font-family: "Geosanslight", sans-serif;
+        font-size: 19px;
+        font-weight: 200;
+        font-style: italic;
+        letter-spacing: 4px;
+        position: relative;
+        text-align: center;
+        top: 45px;
+        right: 0px;
+        color: rgba(255, 255, 255, 0.7);
+        background-color: #00000000;
+    }
+    
+    .hero-slider .carousel-cell .info-container .text{
+        font-family: "Geosanslight", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 26px;
+        /* font-weight: bold; */
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-bottom: 22px;
+    }
+    
+    .hero-slider .carousel-cell .info-container button{
+        padding: 12px 20px;
+        background: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: "Poppins", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 12px;
+        letter-spacing: 3px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .hero-slider .carousel-cell .info-container button:hover{
+        background: #fff;
+        color: #000;
+        font-weight: bold;
+    }
+    
+    .hero-slider .flickity-prev-next-button{
+        width: 55px;
+        height: 55px;
+        background: transparent;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    
+    .hero-slider .flickity-prev-next-button .arrow{
+        fill: #ffffff;
+    }
+    
+    .hero-slider .flickity-page-dots{
+        bottom: 45px;
+    }
+    
+    .hero-slider .flickity-page-dots .dot{
+        margin-bottom: -35px;
+        width: 10px;
+        height: 10px;
+        background: rgba(58, 58, 58, 0.865);
+        opacity: 1;
+        border-radius: 20px;
+        transition: all 0.5s ease;
+    }
+    
+    .hero-slider .flickity-page-dots .dot:hover,
+    .hero-slider .flickity-page-dots .dot.is-selected{
+        background: #fff;
+    }
+    
+    .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+        will-change: opacity, transform;
+    }
+    .fade-in-section.is-visible {
+        opacity: 1;
+        transform: none;
+    }    
+}
+/* DESKTOP HALF HD QUERY */
+@media (min-width: 769px) and (max-width: 1360px) {
+    .hero-slider{
+        background-color: #000000;
+        margin-top: 220px;
+        height: 50vh;
+        overflow: hidden;
+        font-family: 'GeosansLight', sans-serif;
+        z-index: 1;
+    }
+    
+    .hero-slider .carousel-cell{
+        width: 70vh;
+        height: 55vh;
+        padding: 0 2px 0 2px;
+        overflow: hidden;
+        background: no-repeat center/cover;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .hero-slider .carousel-cell::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background: linear-gradient(200deg, #02203164, #297d949f);
+        filter: blur(2px);
+        opacity: 0.6;
+    }
+
+    .hero-slider .carousel-cell:hover {
+        transform: scale(1.07);
+        transition: transform 0.5s ease-in-out;
+    }
+    .hero-slider .carousel-cell:hover .info-container {
+        opacity: 1;
+        transform: scale(1.05);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .hero-slider .carousel-cell .info-container{
+        color: #ffffff;
+        position: relative;
+   
+    }
+    .hero-slider .flickity-prev-next-button{
+        margin-left: 10px;  
+        margin-right: 10px;
+    }
+    .hero-slider .carousel-cell .info-container .header{
+        font-family: "Geosanslight", sans-serif;
+        font-size: 20px;
+        font-weight: 200;
+        font-style: italic;
+        letter-spacing: 4px;
+        background-color: #00000000;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: -35px;
+    }
+    
+    .hero-slider .carousel-cell .info-container .text{
+        font-family: "Geosanslight", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 28px;
+        margin-top: 3px;
+        /* font-weight: bold; */
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-bottom: 32px;
+    }
+    
+    .hero-slider .carousel-cell .info-container button{
+        padding: 12px 12px;
+        background: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: "Geosanslight", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: 3px;
+        border-radius: 30px;
+        display: inline-block;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .hero-slider .carousel-cell .info-container button:hover{
+        background: #fff;
+        color: #000;
+        font-weight: bold;
+        transform: translateY(-9px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.534);
+    }
+    
+    .hero-slider .flickity-prev-next-button{
+        width: 55px;
+        height: 55px;
+        background: transparent;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    .hero-slider .flickity-prev-next-button .arrow{
+        fill: #ffffff;
+    }
+    
+    .hero-slider .flickity-page-dots{
+        bottom: 30px;
+        z-index: 4;
+    }
+    
+    .hero-slider .flickity-page-dots .dot{
+        margin-bottom: -50px;
+        width: 40px;
+        height: 10px;
+        background: rgb(255, 255, 255);
+        opacity: 1;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+    
+    .hero-slider .flickity-page-dots .dot:hover,
+    .hero-slider .flickity-page-dots .dot.is-selected{
+        background: #fff;
+    }
+}
+
+/* DESKTOP QUERY */
+@media (min-width: 1361px) and (max-width: 1920px) {
+    .hero-slider{
+        background-color: #000000;
+        margin-top: 220px;
+        height: 50vh;
+        overflow: hidden;
+        font-family: 'GeosansLight', sans-serif;
+        z-index: 1;
+    }
+    
+    .hero-slider .carousel-cell{
+        width: 70vh;
+        height: 55vh;
+        padding: 0 2px 0 2px;
+        overflow: hidden;
+        background: no-repeat center/cover;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .hero-slider .carousel-cell::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background: linear-gradient(200deg, #02203164, #297d949f);
+        filter: blur(2px);
+        opacity: 0.6;
+    }
+
+    .hero-slider .carousel-cell:hover {
+        transform: scale(1.07);
+        transition: transform 0.5s ease-in-out;
+    }
+    .hero-slider .carousel-cell:hover .info-container {
+        opacity: 1;
+        transform: scale(1.05);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .hero-slider .carousel-cell .info-container{
+        color: #ffffff;
+        position: relative;
+   
+    }
+    .hero-slider .flickity-prev-next-button{
+        margin-left: 10px;  
+        margin-right: 10px;
+    }
+    .hero-slider .carousel-cell .info-container .header{
+        font-family: "Geosanslight", sans-serif;
+        font-size: 25px;
+        font-weight: 200;
+        font-style: italic;
+        letter-spacing: 4px;
+        background-color: #00000000;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: -35px;
+    }
+    
+    .hero-slider .carousel-cell .info-container .text{
+        font-family: "Geosanslight", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 35px;
+        margin-top: 3px;
+        /* font-weight: bold; */
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-bottom: 32px;
+    }
+    
+    .hero-slider .carousel-cell .info-container button{
+        padding: 12px 20px;
+        background: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: "Geosanslight", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        letter-spacing: 3px;
+        border-radius: 30px;
+        display: inline-block;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .hero-slider .carousel-cell .info-container button:hover{
+        background: #fff;
+        color: #000;
+        font-weight: bold;
+        transform: translateY(-9px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.534);
+    }
+    
+    .hero-slider .flickity-prev-next-button{
+        width: 55px;
+        height: 55px;
+        background: transparent;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    .hero-slider .flickity-prev-next-button .arrow{
+        fill: #000000;
+    }
+    
+    .hero-slider .flickity-page-dots{
+        bottom: 30px;
+        z-index: 4;
+    }
+    
+    .hero-slider .flickity-page-dots .dot{
+        margin-bottom: -50px;
+        width: 40px;
+        height: 10px;
+        background: rgb(255, 255, 255);
+        opacity: 1;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+    
+    .hero-slider .flickity-page-dots .dot:hover,
+    .hero-slider .flickity-page-dots .dot.is-selected{
+        background: #fff;
+    }
+}
