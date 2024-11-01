@@ -1,0 +1,174 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.container2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: -10px;
+    margin: -10px 0px -10px -270px;
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 20px;
+}
+.container2 #firstItem {
+    transform: translateX(90px);
+}
+
+#leftItems {
+    display: flex;
+    justify-content: space-around;
+}
+
+#leftItems h2 {
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 35px;
+    filter: drop-shadow(0px 0px 1px black);
+    margin: 0 20px 0px 20px;
+}
+
+#newAgendamentoBtn {
+    font-family: 'Geosanslight', sans-serif;
+    border-radius: 13px;
+    font-size: 22px;
+    padding: 10px 20px;
+    margin: 0px 10px;
+    background-color: #297d9400;
+    color: #022031;
+    border: 1px solid #022031;
+    cursor: pointer;
+    transition: background-color 0.7s, color 0.7s;
+}
+#newAgendamentoBtn:hover {
+    background-color: #022031;
+    color: white;
+}
+
+#searchInput {
+    border-radius: 13px;
+    border: 1px solid #022031;
+    padding: 10px;
+    margin: 0px 20px;
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+#filtrarBtn {
+    font-family: 'Geosanslight', sans-serif;
+    border-radius: 13px;
+    font-size: 20px;
+    padding: 10px 15px;
+    background-color: #297D94;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 50px;
+    transition: background-color 0.5s;
+}
+#filtrarBtn:hover {
+    background-color: #022031;
+}
+
+#txtproced {
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 24px;
+    margin: 0 30px;
+    margin-bottom: -10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+.agendamentos-container {
+    padding-bottom: 50px;
+
+}
+.agendamentos-container p {
+    margin: 0 auto;
+    margin-top: 20px;
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 24px;
+    margin-left: 38%;
+}
+.agendamentos-container button {
+    font-family: 'Geosanslight', sans-serif;
+    border-radius: 13px;
+    font-size: 20px;
+    padding: 10px 15px;
+    background-color: #297D94;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 20px 865px;
+    transition: background-color 0.5s;
+}
+
+.agendamento-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Geosanslight', sans-serif;
+    border-bottom: 1px solid #02203199;
+    margin-bottom: 15px;
+    padding: 0px; /* Adicione padding para espaço interno */
+}
+.nameAgendamento {
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 18px;
+    margin: 0px 50px; /* Remover margens desnecessárias */
+    flex: 1; /* Isso fará com que o nome ocupe o espaço disponível */
+    transition: color 0.5s;
+}
+.pacienteAgendamento {
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 18px;
+    margin: 0px 50px; /* Remover margens desnecessárias */
+    flex: 1; /* Isso fará com que o nome ocupe o espaço disponível */
+    transition: color 0.5s;
+}
+
+.nameProced:hover {
+    color: #022031;
+}
+.dataAgendamento {
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 18px;
+    margin: 0px -120px 0px 50px; /* Remover margens desnecessárias */
+    flex: 0 0 200px; /* Defina uma largura fixa ou um valor desejado */
+    text-align: center; /* Alinha o texto à direita */
+}
+
+.HoraAgendamento {
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 20px;
+    margin: 0px 250px 0px 0px; /* Remover margens desnecessárias */
+    flex: 0 0 200px; /* Defina uma largura fixa ou um valor desejado */
+    text-align: center; /* Alinha o texto à direita */
+}
+
+.priceAgendamento {
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 20px;
+    margin: 0px 100px 0px 0px; /* Remover margens desnecessárias */
+    flex: 0 0 100px; /* Defina uma largura fixa ou um valor desejado */
+    text-align: center; /* Alinha o texto à direita */
+    letter-spacing: 1px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-right: 100px; /* Ajuste conforme necessário */
+    gap: 20px;
+}
+#editBtn {
+    cursor: pointer;
+}
+#deleteBtn {
+    cursor: pointer;
+}

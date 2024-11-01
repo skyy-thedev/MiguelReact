@@ -1,11 +1,12 @@
 const express = require('express');
 const User = require('../models/User'); // Verifique se o caminho está correto
+const Procedure = require('../models/Procedure.js');
 const bcrypt = require('bcrypt'); // Para hash de senhas
 const router = express.Router();
 
 // Rota para registrar um novo usuário
 router.post('/register', async (req, res) => {
-    const { name, email, password, confirmpassword } = req.body;
+    const { name, email, password, confirmpassword, privilegies } = req.body;
 
     // Validações simples
     if (!name || !email || !password || !confirmpassword) {
@@ -23,7 +24,7 @@ router.post('/register', async (req, res) => {
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = new User({ name, email, password: hashedPassword });
+        const newUser = new User({ name, email, password: hashedPassword, privilegies });
         await newUser.save();
 
         res.status(201).json({ user: { id: newUser._id, name: newUser.name, email: newUser.email } });
@@ -53,5 +54,14 @@ router.post('/login', async (req, res) => {
         res.status(500).json({ message: 'Erro ao fazer login', error });
     }
 });
+
+router.get('/procedures', async (req, res) => {
+    try {
+      const procedures = await Procedure.find(); // Busca todos os procedimentos
+      res.status(200).json(procedures); // Retorna os procedimentos como JSON
+    } catch (error) {
+      res.status(500).json({ message: 'Erro ao buscar procedimentos', error });
+    }
+  });
 
 module.exports = router; // Não esqueça de exportar o router

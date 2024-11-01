@@ -12,6 +12,7 @@ const AppRegister = () => {
     email: '',
     password: '',
     confirmpassword: ''
+
   });
 
   const { login } = useAuth(); // Usar o hook para obter a função de login
@@ -21,6 +22,7 @@ const AppRegister = () => {
     const { name, value } = e.target;
     setRegisterData({
       ...registerData,
+      privilegies: false,
       [name]: value,
     });
   };
@@ -37,7 +39,7 @@ const AppRegister = () => {
     try {
       const response = await axios.post('http://localhost:5000/api/users/register', registerData);
       login(response.data.user); // Armazenar o usuário em cookies
-      navigate('/Login');
+      navigate('/Agendamentos');
     } catch (error) {
       if (error.response) {
         console.error('Erro:', error.response.data);
@@ -111,7 +113,7 @@ const AppRegister = () => {
         </div>
       </div>
       <div className={styles.fundoScreen}>
-        <img src={FundoScreen} alt="Agende sua consulta" className={styles.fundoScreenImage} />
+        <img src={FundoScreen} alt="Agende sua consulta" id='fundoScreenImage' className={styles.fundoScreenImage} />
       </div>
     </div>
   );

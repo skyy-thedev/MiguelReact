@@ -4,6 +4,8 @@ import { useAuth } from './AuthContext.js';
 import styles from './styles/AppLogin.module.css';
 import Logo from '../assets/body/logo+.png';
 import FundoScreen from '../assets/heroslider/fundo.jpg';
+import AlertSystem from '../components/alerts/alertSystem';
+import useAlert from '../components/alerts/useAlert';
 
 const AppLogin = () => {
   const [loginData, setLoginData] = useState({
@@ -11,8 +13,9 @@ const AppLogin = () => {
     password: '',
   });
 
-  const { login } = useAuth(); // Usar o hook para obter a função de login
-  const navigate = useNavigate(); // Hook para redirecionamento
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const { error, success, showError, showSuccess } = useAlert();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,25 +38,27 @@ const AppLogin = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Credenciais inválidas');
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Erro ao fazer login.');
       }
 
       const data = await response.json();
-      login(data.user); // Usar a função de login do contexto
-      
-      // Armazenar as informações do usuário
-      localStorage.setItem('userName', data.user.name); // Armazenar o nome do usuário
-      localStorage.setItem('userId', data.user.id); // Armazenar o ID do usuário
+      login(data.user);
 
-      // Redirecionar para a página de dashboard
-      navigate('/dashboard');
+      localStorage.setItem('userName', data.user.name);
+      localStorage.setItem('userId', data.user.id);
+
+      showSuccess('Login realizado com sucesso!');
+      // Esperar um tempo antes de redirecionar
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 2000); // Ajuste o tempo conforme necessário
     } catch (error) {
       console.error('Erro:', error);
-      alert('Erro ao fazer login. Verifique suas credenciais.');
+      showError('Erro ao fazer login. Verifique suas credenciais.');
     }
   };
 
-  // UseEffect para verificar se o usuário está logado
   useEffect(() => {
     const storedUserName = localStorage.getItem('userName');
     if (storedUserName) {
@@ -92,7 +97,7 @@ const AppLogin = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <button type="submit">Acessar</button>
+              <button type="submit" >Acessar</button>
             </div>
           </form>
         </div>
@@ -103,6 +108,7 @@ const AppLogin = () => {
       <div className={styles.fundoScreen}>
         <img src={FundoScreen} alt="Agende sua consulta" className={styles.fundoScreenImage} />
       </div>
+      <AlertSystem error={error} success={success} /> 
     </div>
   );
 };

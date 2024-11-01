@@ -1,0 +1,210 @@
+/* Define o fundo escuro de overlay */
+body {
+    background-color: #ffffff00;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo translúcido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000; /* Mantém o modal acima dos outros elementos */
+}
+
+/* Define o conteúdo do modal */
+.modal-content {
+    background-color: #fff;
+    font-family: 'Geosanslight', sans-serif;
+    justify-content: center;
+    font-size: 22px;
+    padding: 20px;
+    border-radius: 13px;
+    width: 50%;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative; /* Para o botão de fechar */
+    display: flex; /* Usar flexbox para alinhar o conteúdo */
+    flex-direction: column; /* Os elementos devem ser empilhados verticalmente */
+}
+
+/* Estilo para o botão de fechar no topo */
+#exitButtonTop {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* Container para os itens do carrossel */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row; /* Mantenha a direção como linha para itens do carrossel */
+    width: 100%;
+    position: relative; /* Para posicionar as setas */
+}
+
+/* Itens do carrossel */
+.carousel-items {
+    display: flex; /* Alinha os itens horizontalmente */
+    overflow-x: hidden; /* Permite rolagem horizontal */
+    scroll-behavior: smooth; /* Transição suave na rolagem */
+    padding: 10px 10px; /* Espaçamento vertical */
+}
+
+/* Seta de rolagem */
+.arrow {
+    width: 30px; /* Ajuste o tamanho da seta */
+    height: 30px;
+    cursor: pointer;
+    position: absolute; /* Posiciona as setas dentro do container */
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    z-index: 10; /* Mantém as setas acima do conteúdo */
+}
+
+/* Posiciona a seta esquerda */
+.left-arrow {
+    top: 90px;
+    left: -5px; /* Ajuste a posição conforme necessário */
+}
+
+/* Posiciona a seta direita */
+.right-arrow {
+    top: 90px;
+    right: 5px; /* Ajuste a posição conforme necessário */
+}
+
+/* Estilo para os itens do carrossel */
+.carousel-item {
+    display: flex; /* Flexbox para alinhar os itens horizontalmente */
+    flex-direction: column;
+    background-color: #f9f9f9; /* Cor de fundo dos itens */
+    border: 1px solid #ccc; /* Borda ao redor do item */
+    margin: -10px 22px 40px 35px; /* Espaçamento entre os itens */
+    padding: 0px 100px; /* Espaçamento interno */
+    border-radius: 13px; /* Bordas arredondadas */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    -webkit-user-select: none; /* Impede a seleção de texto */
+    cursor: pointer; /* Mudança do cursor ao passar o mouse */
+    transition: background-color 0.5s, color 0.3s; /* Transição para hover */
+}
+.carousel-item h3 {
+    width: 20vh;
+}
+/* Efeito hover nos itens do carrossel */
+.carousel-item:hover {
+    background-color: #06a0b4d4; /* Altera a cor ao passar o mouse */
+    color: white;
+}
+.indicator-container {
+    display: flex;
+    justify-content: center; /* Centraliza as bolinhas */
+    margin-top: -20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.indicator {
+    width: 10px; /* Tamanho da bolinha */
+    height: 10px;
+    border-radius: 50%; /* Faz a bolinha redonda */
+    background-color: #ccc; /* Cor padrão */
+    margin: 0 5px; /* Espaço entre as bolinhas */
+    cursor: pointer; /* Cursor de pointer ao passar o mouse */
+    transition: background-color 0.3s; /* Transição suave na cor */
+}
+
+.indicator.active {
+    background-color: #06a0b4; /* Cor da bolinha ativa */
+}
+
+#procedBox {
+    height: 140px;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    text-align: center;
+    display: block;
+}
+.carousel-item.active {
+    background-color: #022031; /* Cor quando ativo */
+    color: white; /* Cor do texto quando ativo */
+}
+.carousel-item:not(.active) {
+    background-color: #06a0b4; /* Cor quando ativo */
+    color: white; /* Cor do texto quando ativo */
+}
+#procedBox p {
+    margin-top: -10px;
+}
+/* Estilo para a seção de horários */
+#horarioDiv {
+    margin-top: -30px; /* Ajuste para o posicionamento correto */
+    border: none;
+    text-decoration: none;
+}
+#horarioDiv h3 {
+    margin-top: 15px;
+}
+#horarioDiv ul {
+    margin: 0 auto;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.datas {
+    padding: 10px;
+    margin: 10px 10px 20px;
+    border: 1px solid #022031;
+    border-Radius: 13px;
+    cursor: pointer;
+    transition: background-color 1s ease, color 0.8s ease;
+}
+.datas:hover {
+    color: white;
+    background-color: #022031;
+}
+.datas.active {
+    color: white;
+    background-color: #022031;
+}
+#timeBtn {
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: #0f3b48;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 12px;
+    transition: 0.6s ease, background-color 1s ease;
+    cursor: pointer;
+}
+#timeBtn:hover {
+    transform: translateY(-5px);
+    background-color: #022031;
+    box-shadow: 1px 1px 5px black;
+}
+#confirmBtn {
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 18px;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    max-width: 25%;
+    background-color: #297D94;
+    color: white;
+    transition: background-color 0.5s;
+}
+#confirmBtn:hover {
+    background-color: #022031;
+}

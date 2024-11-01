@@ -1,0 +1,43 @@
+[
+    {
+      "_id": "6722ea8610114d6775bdc07f",
+      "nome": "Consulta Online",
+      "valor": 257
+    },
+    {
+      "_id": "6722ea8610114d6775bdc080",
+      "nome": "Suplementação Endovenosa",
+      "valor": 400
+    },
+    {
+      "_id": "6722ea8610114d6775bdc081",
+      "nome": "Suplementação Intramuscular",
+      "valor": 400
+    },
+    {
+      "_id": "6722ea8610114d6775bdc082",
+      "nome": "Toxina Botulínica",
+      "valor": 1400
+    },
+    {
+      "_id": "6722ea8610114d6775bdc083",
+      "nome": "Preenchimento Labial",
+      "valor": 1200
+    },
+    {
+      "_id": "6722ea8610114d6775bdc084",
+      "nome": "Soroterapia",
+      "valor": 400
+    },
+    {
+      "_id": "6722ea8610114d6775bdc085",
+      "nome": "Bioestimulador de colágeno",
+      "valor": 1900
+    },
+    {
+      "_id": "6722ea8610114d6775bdc086",
+      "nome": "Protocolo capilar",
+      "valor": 280
+    }
+  ]
+  

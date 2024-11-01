@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes'); // Importa o arquivo de rotas
+const agendamentoRoutes = require('./routes/agendamentoRoutes');
 
 const app = express();
 
@@ -19,6 +20,7 @@ mongoose.connect('mongodb+srv://ohskyz123:ozzdwewHGpMbEtod@cluster0.liqth.mongod
   console.log('Conectado ao MongoDB');
   // Usar as rotas de usuário após a conexão com o banco de dados
   app.use('/api/users', userRoutes); // Aqui é onde você define as rotas
+  app.use('/api/agendamentos', agendamentoRoutes);
 })
 .catch(err => console.error('Erro ao conectar ao MongoDB:', err));
 

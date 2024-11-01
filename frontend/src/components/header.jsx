@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext';
+import AlertSystem from '../components/alerts/alertSystem';
+import useAlert from '../components/alerts/useAlert';
 import logo from '../assets/header/logo.png';
 import '../components/styles/header.css';
 import Wapp from '../assets/icons/wapp.svg';
@@ -15,6 +17,7 @@ const Header = () => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const submenuRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { success, showSuccess } = useAlert();
 
   useEffect(() => {
     const contatoBtn = contatoBtnRef.current;
@@ -45,14 +48,31 @@ const Header = () => {
   }; 
 
   const handleLogout = () => {
-    logout(); // Chama a função de logout para limpar a autenticação
-    navigate('/'); // Redireciona para a página inicial
+
+    setTimeout(() => {
+      showSuccess('Sessão encerrada com sucesso!');
+      logout();
+      navigate('/Home');
+    }, 2000);
   };
 
   return (
     <header className="header">
       <div className="ContainerFlex">
-        <a href="/"><img src={logo} alt="Logo" id="logo" /></a>
+        <a href="/Home"><img src={logo} alt="Logo" id="logo" /></a>
+
+        {user ? (  
+          <nav>
+            <ul>
+              <li><a href="/Agendamentos" id='leftheader'>Agendamentos</a></li>
+              <li><a href="/Procedimentos" id='leftheader'>Procedimentos</a></li>
+              <li className='headerEff'><a id='leftheader' href='/dashboard'>Olá, {user.name}! ▼</a></li>
+              <li>
+                  <button className='logoutbtn' id='leftheader' onClick={handleLogout} href='/.'>Logout</button>
+                </li>
+            </ul>
+          </nav> ) : (null) }
+
         <div className="menu-toggle" onClick={toggleMenu}>
           <div></div>
           <div></div>
@@ -62,10 +82,7 @@ const Header = () => {
           <ul>
           {user ? (
               <>
-                <li>
-                  <button className='logoutbtn' onClick={handleLogout} href='/.'>Sair</button>
-                </li>
-                <li className='headerEff'><a href='/dashboard'>Olá, {user.name}!</a></li>
+
               </>
             ) : (
               <li><a href="/login">Login</a></li>
@@ -96,6 +113,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+      <AlertSystem success={success} />
     </header>
   );
 };

@@ -18,6 +18,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = (userData) => {
     setUser(userData);
+    
     try {
       Cookies.set('user', JSON.stringify(userData), { expires: 7 });
       console.log('Usuário logado:', userData.name);
@@ -38,7 +39,6 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-
 // Hook para usar o contexto
 export const useAuth = () => {
   return useContext(AuthContext);
