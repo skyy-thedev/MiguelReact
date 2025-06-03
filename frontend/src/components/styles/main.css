@@ -54,10 +54,10 @@
 /* DESKTOP QUERY */
 @media (min-width: 1361px) and (max-width: 1920px) {
     .destaque {
-        height: 10vw;
+        height: 100%;
         margin-top: -80px;
         width: 100%;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgb(255, 255, 255, 0.5));
+        background: linear-gradient(45deg, #b9e1ecc7, #297d94);
         color: white;
         justify-content: center;
         text-align: center;
@@ -74,12 +74,13 @@
     .destaque img {
         margin-top: 100px;
         margin-bottom: -50px;
+        padding-bottom: 100px;
         width: 500px;
         height: 280px;
         transition: 0.5s ease-in-out;
+        cursor: default;
     }
     .destaque img:hover {
-        transform: translateY(-15px);
-        filter: drop-shadow(-5px -5px 2px rgb(75, 75, 75));
+        transform: scale(1.05);
     }
 }

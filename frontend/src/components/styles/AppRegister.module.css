@@ -1,12 +1,268 @@
 /*  SMARTPHONE PORTRAIT QUERY */
-@media (min-width: 300px) and (max-width: 350px) {}
+@media (min-width: 300px) and (max-width: 450px) {
+  .container {
+    display: flex;
+    justify-items: center;
+    width: 80vw;
+    padding: 50px 30px;
+  }
 
-@media (min-width: 351px) and (max-width: 415px) {}
+  /* Estilo do lado esquerdo - homeScreen */
+  .homeScreen {
+    margin: 0px;
+    padding: 20px 0px;
+    background-color: rgba(212, 250, 238, 0);
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-@media (min-width: 416px) and (max-width: 766px) {}
+  .homeScreen h2 {
+    font-family: 'Geosanslight', sans-serif;
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 0px;
+  }
+
+  .LogoIugas {
+    width: 35vh;
+    transform: translateY(-20px);
+    margin: 0 auto;
+    filter: drop-shadow(1px 1px 0px black);
+  }
+
+  .formContainer {
+    text-align: center;
+    width: 320px;
+    margin: 0 auto;
+  }
+
+  .formContainer h3 {
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 24px;
+    color: #022031;
+  }
+  .termsCheckbox {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Geosanslight', sans-serif;
+    text-align: left;
+    font-size: 18px;
+    width: 350px;
+    margin-top: -25px;
+    margin-bottom: -15px;
+    color: #022031;
+    text-decoration: #297D94;
+    gap: 10px;
+  }
+  .termsCheckbox a {
+    color: #297D94;
+    text-decoration: none;
+  }
+  .termsCheckbox, .checkbox {
+    margin-left: -15px;
+    margin-right: -20px;
+    padding: 0px;
+  }
+
+  .formGroup {
+    padding: 5px;
+  }
+
+  .formGroup input {
+    font-family: 'Geosanslight', sans-serif;
+    border-radius: 13px;
+    height: 45px;
+    width: 279px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #022031;
+    background-color: #F1F5F4;
+    border: 1px solid #297D94;
+    margin-bottom: 10px;
+  }
+
+  .formGroup input:focus {
+    color: #022031;
+    background-color: #e0f7fa;
+    border-color: #00796b;
+    outline: none;
+  }
+
+  .formGroup button {
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 18px;
+    width: 279px;
+    height: 45px;
+    color: white;
+    background-color: #297D94;
+    border-radius: 13px;
+    border: none;
+    transition: 0.3s ease;
+  }
+
+  .formGroup button:hover {
+    color: #022031;
+    font-weight: bold;
+    border: 2px solid #022031;
+  }
+
+  .textoBottom {
+    text-align: center;
+    font-family: 'Geosanslight', sans-serif;
+    color: #022031;
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 0;
+  }
+
+  .textoBottom a {
+    text-decoration: none;
+    color: #297D94;
+  }
+
+  /* Estilo do lado direito - fundoScreen */
+  .fundoScreen {
+    width: 50vw; /* Ocupa a largura total da viewport */
+    height: 89vh; /* Ocupa a altura total da viewport */
+    display: none;
+    overflow: hidden; /* Impede que o conteúdo exceda as bordas */
+  }
+  
+  #fundoScreenImage {
+    width: 100%; /* Ajusta a imagem para a largura total do contêiner */
+    height: 100%; /* Ajusta a imagem para a altura total do contêiner */
+    display: none;
+    object-fit: cover; /* Garante que a imagem preencha o contêiner sem distorção */
+  }
+}
+
+@media (min-width: 351px) and (max-width: 415px) {
+  
+}
+
+@media (min-width: 416px) and (max-width: 766px) {
+  
+}
 
 /*  SMARTPHONE LANDSCAPE QUERY */
-@media (min-width: 768px) and (max-width: 1359px) {}
+@media (min-width: 768px) and (max-width: 1359px) {
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Estilo do lado esquerdo - homeScreen */
+  .homeScreen {
+    margin: 0px;
+    padding: 20px 0px;
+    background-color: rgba(212, 250, 238, 0);
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .homeScreen h2 {
+    font-family: 'Geosanslight', sans-serif;
+    text-align: center;
+    margin-top: -60px;
+    margin-bottom: 0px;
+  }
+
+  .LogoIugas {
+    width: 45vh;
+    transform: translateY(-40px);
+    margin: 0 auto;
+    filter: drop-shadow(1px 1px 0px black);
+  }
+
+  .formContainer {
+    text-align: center;
+    width: 320px;
+    margin: 0 auto;
+  }
+
+  .formContainer h3 {
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 24px;
+    color: #022031;
+  }
+
+  .formGroup {
+    padding: 5px;
+  }
+
+  .formGroup input {
+    font-family: 'Geosanslight', sans-serif;
+    border-radius: 13px;
+    height: 45px;
+    width: 279px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #022031;
+    background-color: #F1F5F4;
+    border: 1px solid #297D94;
+    margin-bottom: 10px;
+  }
+
+  .formGroup input:focus {
+    color: #022031;
+    background-color: #e0f7fa;
+    border-color: #00796b;
+    outline: none;
+  }
+
+  .formGroup button {
+    font-family: 'Geosanslight', sans-serif;
+    font-size: 18px;
+    width: 279px;
+    height: 45px;
+    color: white;
+    background-color: #297D94;
+    border-radius: 13px;
+    border: none;
+    transition: 0.3s ease;
+  }
+
+  .formGroup button:hover {
+    color: #022031;
+    font-weight: bold;
+    border: 2px solid #022031;
+  }
+
+  .textoBottom {
+    text-align: center;
+    font-family: 'Geosanslight', sans-serif;
+    color: #022031;
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 0;
+  }
+
+  .textoBottom a {
+    text-decoration: none;
+    color: #297D94;
+  }
+
+  /* Estilo do lado direito - fundoScreen */
+  .fundoScreen {
+    width: 50vw; /* Ocupa a largura total da viewport */
+    height: 89vh; /* Ocupa a altura total da viewport */
+    display: flex;
+    opacity: 0.9;
+    overflow: hidden; /* Impede que o conteúdo exceda as bordas */
+  }
+  
+  #fundoScreenImage {
+    width: 100%; /* Ajusta a imagem para a largura total do contêiner */
+    height: 100%; /* Ajusta a imagem para a altura total do contêiner */
+    object-fit: cover; /* Garante que a imagem preencha o contêiner sem distorção */
+  }
+}
 
 /*  DESKTOP HALF HD QUERY */
 @media (min-width: 1360px) and (max-width: 1600px) {
@@ -182,7 +438,7 @@
     height: 45px;
     width: 279px;
     padding-left: 10px;
-    font-size: 16px;
+    font-size: 20px;
     color: #022031;
     background-color: #F1F5F4;
     border: 1px solid #297D94;
@@ -194,6 +450,29 @@
     background-color: #e0f7fa;
     border-color: #00796b;
     outline: none;
+  }
+  
+  .termsCheckbox {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Geosanslight', sans-serif;
+    text-align: left;
+    font-size: 18px;
+    width: 350px;
+    margin-top: -25px;
+    margin-bottom: -15px;
+    color: #022031;
+    text-decoration: #297D94;
+    gap: 10px;
+  }
+  .termsCheckbox a {
+    color: #297D94;
+    text-decoration: none;
+  }
+  .termsCheckbox, .checkbox {
+    margin-left: -15px;
+    margin-right: -20px;
+    padding: 0px;
   }
 
   .formGroup button {

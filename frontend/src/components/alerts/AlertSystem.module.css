@@ -8,7 +8,7 @@
     font-family: 'Geosanslight', sans-serif;
     font-size: 22px;
     animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
-    z-index: 1000;
+    z-index: 2000;
   }
   
   .alert-error {

@@ -66,7 +66,7 @@ const Header = () => {
             <ul>
               <li><a href="/Agendamentos" id='leftheader'>Agendamentos</a></li>
               <li><a href="/Procedimentos" id='leftheader'>Procedimentos</a></li>
-              <li className='headerEff'><a id='leftheader' href='/dashboard'>Olá, {user.name}! ▼</a></li>
+              <li className='headerEff'><a id='leftheader' href='/dashboard'>Olá, {user.name}! ⌥</a></li>
               <li>
                   <button className='logoutbtn' id='leftheader' onClick={handleLogout} href='/.'>Logout</button>
                 </li>
@@ -85,7 +85,7 @@ const Header = () => {
 
               </>
             ) : (
-              <li><a href="/login">Login</a></li>
+              <li><a href="/login"> ⌥ Login</a></li>
             )}
             <li><a href="/.#Sobre">Sobre</a></li>
             <li>

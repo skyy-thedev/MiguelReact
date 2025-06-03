@@ -1,6 +1,6 @@
 {
   "name": "migueliugas",
-  "version": "1.0",
+  "version": "1.2",
   "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -15,6 +15,7 @@
     "js-cookie": "^3.0.5",
     "mongoose": "^8.7.3",
     "react": "^18.3.1",
+    "react-datepicker": "^7.5.0",
     "react-dom": "^18.3.1",
     "react-flickity-component": "^4.0.7",
     "react-icons": "^5.3.0",

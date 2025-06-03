@@ -17,9 +17,9 @@ const flickityOptions = {
 
 const HeroSlider = () => {
     const slides = [
-        { image: Aulas, header: "Cursos e Mentorias", text: "Aulas", link: "https://hotmart.com/pt-br/marketplace/produtos?initialSelectedCategory=&q=Miguel+Iugas", buttonText: "Aprender mais!" },
-        { image: Consultoria, header: "Agendamento", text: "Consultoria", link: "/Login", buttonText: "Saiba mais!" },
-        { image: Agenda, header: "Lives e Palestras", text: "Agenda", link: "https://www.instagram.com/migueliugas/", buttonText: "Calendário!" },
+        { image: Aulas, id: 'Aulas' , header: "Cursos e Mentorias", text: "Aulas", link: "https://hotmart.com/pt-br/marketplace/produtos?initialSelectedCategory=&q=Miguel+Iugas", buttonText: "Aprender mais!" },
+        { image: Consultoria, id: 'Consultoria' , header: "Agendamento", text: "Consultoria", link: "/Login", buttonText: "Saiba mais!" },
+        { image: Agenda, id: 'Agenda' , header: "Lives e Palestras", text: "Agenda", link: "https://www.instagram.com/migueliugas/", buttonText: "Calendário!" },
     ];
 
     return (

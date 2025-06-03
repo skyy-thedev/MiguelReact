@@ -1,5 +1,5 @@
 /*  SMARTPHONE PORTRAIT QUERY*/
-@media (min-width: 300px) and (max-width: 350px) {
+@media (min-width: 300px) and (max-width: 768px) {
     .header {
       position: fixed;
       display: flex;
@@ -86,9 +86,8 @@
         background-color: rgb(0, 0, 0);
         padding: 10px 10px;
         font-size: 18px;
-        margin: 0 30px;
         width: 90%;
-        top: 280px; /* Aparece logo abaixo do item principal */
+        top: 0px; /* Aparece logo abaixo do item principal */
         border-radius: 5px;
         z-index: 99;
         transition: opacity 1s ease-in, visibility 1s ease-in;
@@ -97,7 +96,8 @@
       .submenu.open {
         opacity: 1; /* Visível */
         visibility: visible; /* Mostra o submenu */
-        left: 0; /* Mantém alinhado ao item principal */
+        margin: 0 auto;
+        top: 200px;
       }
       
       .submenu.closed {
@@ -138,6 +138,26 @@
       color: #06A1B4;
       transform: translateY(-5px);
       filter: drop-shadow(10px 5px 1px rgba(0, 0, 0, 0.741));
+    }
+
+    #submenubtn {
+      font-family: 'Geosanslight', sans-serif;
+      font-size: 25px;
+      letter-spacing: 3px;
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 155px;
+      border-color: #00000000;
+      color: #fff;
+      padding: 8px 8px;
+      cursor: pointer;
+      display: inline-block;
+      transition: 0.9s all;
+      transform: 1s ease;
+    }
+    
+    #submenubtn:hover {
+      color: #06A1B4;
+      transform: translateY(-5px);
     }
 
     #contato-btn {
@@ -986,7 +1006,7 @@
     
     #logo {
       margin-top: 0px;
-      margin-left: 100px;
+      margin-left: 0px;
       padding: 0px 10px;
       width: 150px;
       height: 80px;
@@ -1006,6 +1026,11 @@
     .headerEff:hover {
       color: #06A1B4;
     }
+    #leftheader {
+      transform: translateX(-60px);
+      transition: 0.9s all;
+      transform: 1s ease;
+    }
     .logoutbtn {
       width: 70px;
       height: 30px;
@@ -1015,8 +1040,10 @@
       background-color: #022031;
       border-radius: 30px;
       border: 1px solid white;
+      transition: transform 1s ease;
     }
     .logoutbtn:hover {
+      transform: scale(1.05);
       filter: drop-shadow(0px 0px 1px white);
     }
     nav ul {
@@ -1100,7 +1127,7 @@
       position: sticky;
       transition: background-color 1s ease;
       background-color: rgb(0, 0, 0);
-      height: 80px;
+      height: 60px;
       top: 0;
       font-family: 'Geosanslight', sans-serif;
       font-size: 18px;
@@ -1115,7 +1142,7 @@
         display: flex;
         list-style: none;
         padding: 0;
-        margin: 20px;
+        margin: 10px;
       }
 
       header nav ul li {
@@ -1216,14 +1243,13 @@
       margin-top: 0px;
       margin-left: 10px;
       padding: 0px 10px;
-      width: 150px;
-      height: 80px;
+      width: 120px;
+      height: 60px;
       transition: 1s all;
       filter: drop-shadow(0px -1px 0px white);
     }
     #logo:hover {
-      transform: translateY(-5px);
-      filter: drop-shadow(0px -1px 2px white);
+      transform: scale(1.1);
     }
     .headerEff {
       color: #fff;
@@ -1241,23 +1267,28 @@
       color: white;
       cursor: pointer;
       border: none;
-      background:  #022031;
-      border-radius: 30px;
+      background:  #02203100;
       transition: background-color 0.5s ease, color 0.3s ease;
       font-family: 'Geosanslight', sans-serif;
       font-weight: 600;
-      font-size: 16px;
+      font-size: 14px;
     }
     
     .logoutbtn:hover {
-      color: black;
       background: #297D94;
+      border-radius: 4px;
     }
 
     #leftheader {
       transform: translateX(-200px);
       transition: 0.9s all;
       transform: 1s ease;
+    }
+   #leftheader:hover {
+      color: white;
+      background: #297D94;
+      border-radius: 4px;
+      padding: 5px 5px;
     }
 
     nav ul {
@@ -1266,7 +1297,7 @@
       padding: 0;
       display: flex;
       justify-content: flex-end;
-      margin-right: 50px;
+      margin-right: 20px;
       margin-top: 25px;
       cursor: pointer;
     }
@@ -1279,7 +1310,7 @@
     nav ul li a {
       color: #fff;
       text-decoration: none;
-      padding: 10px 10px;
+      padding: 10px 5px;
       cursor: pointer;
       display: inline-block;
       transition: 0.9s all;
@@ -1287,10 +1318,9 @@
     }
     
     nav ul li a:hover {
-      color: #06A1B4;
+      color: #0bdcf8;
       transform: translateY(-5px);
       border-radius: 155px;
-      filter: drop-shadow(10px 5px 1px rgba(0, 0, 0, 0.741));
       cursor: pointer;
     }
 

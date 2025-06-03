@@ -17,6 +17,7 @@ export const AuthProvider = ({ children }) => {
   });
 
   const login = (userData) => {
+    console.log('Dados do usuário no login:', userData);
     setUser(userData);
     
     try {
@@ -31,14 +32,21 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
     Cookies.remove('user');
     console.log('Usuário deslogado');
-  };  
+  };
+
+  // Função para verificar privilégios
+  const hasPrivileges = () => {
+    return user?.privilegies === 'admin' ? 'admin' : 'user';
+  };
+
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, hasPrivileges }}>
       {children}
     </AuthContext.Provider>
   );
 };
+
 // Hook para usar o contexto
 export const useAuth = () => {
   return useContext(AuthContext);

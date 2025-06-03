@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Para redirecionar
 import { useAuth } from './AuthContext.js'; // Importar o hook do contexto
+import UserTermsTooltip from './modals/UserTermsTooltip.jsx';
 import styles from './styles/AppRegister.module.css';
 import Logo from '../assets/body/logo+.png';
 import FundoScreen from '../assets/heroslider/fundo.jpg';
@@ -103,11 +104,21 @@ const AppRegister = () => {
                 required
               />
             </div>
+            <div className={styles.termsCheckbox}>
+              <input 
+                type="checkbox" 
+                name="termsCheckbox" 
+                id="termsCheckbox"
+                required
+                />
+                <h5>Confirmo que minhas informações são reais e concordo com os <UserTermsTooltip /> de dados do usuário.</h5>
+            </div>
             <div className={styles.formGroup}>
               <button type="submit">Acessar</button>
             </div>
           </form>
         </div>
+        
         <div className={styles.textoBottom}>
           <h4>Já tem uma conta? <a href="/Login">Acessar agora!</a></h4>
         </div>

@@ -21,38 +21,61 @@
         justify-content: center;
         text-align: center;
     }
-    
-    .hero-slider .carousel-cell .info-container{
-        color: #ffffff;
-        position: relative;
+
+    .hero-slider .carousel-cell::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background: linear-gradient(200deg, #02203164, #297d949f);
+        filter: blur(2px);
+        opacity: 0.6;
     }
-    
-    .hero-slider .carousel-cell .info-container .header{
+        
+    /* Contêiner principal do slider */
+    .hero-slider .carousel-cell .info-container {
+        color: #ffffff;
+        position: absolute; /* Usamos absolute para que o conteúdo fique posicionado em relação ao slide */
+        top: 50%; /* Centraliza verticalmente */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translate(-50%, -50%); /* Ajuste preciso para centralizar */
+        text-align: center; /* Garante que o texto do header seja centralizado */
+        width: 100%; /* Ocupa toda a largura do slide */
+        display: flex;
+        flex-direction: column; /* Organiza os elementos em coluna (header acima do texto) */
+        justify-content: center; /* Centraliza o conteúdo verticalmente dentro do contêiner */
+        align-items: center; /* Centraliza o conteúdo horizontalmente */
+    }
+
+    /* Estilo do título (header) */
+    .hero-slider .carousel-cell .info-container .header {
         font-family: "Geosanslight", sans-serif;
         font-size: 19px;
         font-weight: 200;
         font-style: italic;
         letter-spacing: 4px;
-        position: relative;
-        text-align: center;
-        top: 45px;
-        right: 0px;
         color: rgba(255, 255, 255, 0.7);
-        background-color: #00000000;
+        background-color: transparent; /* Remover fundo transparente */
+        justify-content: center;
+        margin-top: -10px;
     }
     
-    .hero-slider .carousel-cell .info-container .text{
+    /* Estilo do texto abaixo do header */
+    .hero-slider .carousel-cell .info-container .text {
         font-family: "Geosanslight", sans-serif;
         font-weight: 600;
         font-style: normal;
         font-size: 26px;
-        /* font-weight: bold; */
         text-transform: uppercase;
         letter-spacing: 4px;
-        margin-bottom: 22px;
+        margin-top: 22px;
+        margin-bottom: 22px; /* Espaçamento adicional após o texto */
     }
-    
-    .hero-slider .carousel-cell .info-container button{
+
+    /* Estilo do botão */
+    .hero-slider .carousel-cell .info-container button {
         padding: 12px 20px;
         background: transparent;
         border: 1px solid #fff;
@@ -67,7 +90,7 @@
         cursor: pointer;
         transition: all 0.3s ease;
     }
-    
+
     .hero-slider .carousel-cell .info-container button:hover{
         background: #fff;
         color: #000;
@@ -108,7 +131,7 @@
     .fade-in-section {
         opacity: 0;
         transform: translateY(20px);
-        transition: opacity 1s ease-out, transform 1s ease-out;
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         will-change: opacity, transform;
     }
     .fade-in-section.is-visible {
@@ -117,7 +140,7 @@
     }    
 }
 /* DESKTOP HALF HD QUERY */
-@media (min-width: 769px) and (max-width: 1360px) {
+@media (min-width: 769px) and (max-width: 1366px) {
     .hero-slider{
         background-color: #000000;
         margin-top: 220px;
@@ -152,19 +175,19 @@
     }
 
     .hero-slider .carousel-cell:hover {
-        transform: scale(1.07);
+        transform: scale(1.05);
         transition: transform 0.5s ease-in-out;
     }
     .hero-slider .carousel-cell:hover .info-container {
         opacity: 1;
-        transform: scale(1.05);
+        transform: scale(0.9);
         transition: transform 0.5s ease-in-out;
     }
 
     .hero-slider .carousel-cell .info-container{
         color: #ffffff;
         position: relative;
-   
+        transform: scale(0.8);
     }
     .hero-slider .flickity-prev-next-button{
         margin-left: 10px;  
@@ -230,15 +253,14 @@
     }
     
     .hero-slider .flickity-page-dots{
-        bottom: 30px;
+        bottom: 20px;
         z-index: 4;
     }
     
     .hero-slider .flickity-page-dots .dot{
-        margin-bottom: -50px;
-        width: 40px;
+        width: 10px;
         height: 10px;
-        background: rgb(255, 255, 255);
+        background: rgb(22, 22, 22);
         opacity: 1;
         border-radius: 20px;
         transition: all 0.3s ease;
@@ -251,10 +273,9 @@
 }
 
 /* DESKTOP QUERY */
-@media (min-width: 1361px) and (max-width: 1920px) {
+@media (min-width: 1367px) and (max-width: 1920px) {
     .hero-slider{
         background-color: #000000;
-        margin-top: 220px;
         height: 50vh;
         overflow: hidden;
         font-family: 'GeosansLight', sans-serif;
@@ -272,6 +293,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+        transition: 1s transform ease-in-out;
     }
     .hero-slider .carousel-cell::before {
         content: '';
@@ -286,13 +308,14 @@
     }
 
     .hero-slider .carousel-cell:hover {
-        transform: scale(1.07);
-        transition: transform 0.5s ease-in-out;
+        transform: scale(1.05);
+        transition: transform 1s ease-in-out;
     }
     .hero-slider .carousel-cell:hover .info-container {
         opacity: 1;
         transform: scale(1.05);
         transition: transform 0.5s ease-in-out;
+        color: #40d6ff;
     }
 
     .hero-slider .carousel-cell .info-container{
@@ -312,7 +335,7 @@
         letter-spacing: 4px;
         background-color: #00000000;
         color: rgba(255, 255, 255, 0.7);
-        margin-bottom: -35px;
+        margin-bottom: -20px;
     }
     
     .hero-slider .carousel-cell .info-container .text{
@@ -347,7 +370,7 @@
         background: #fff;
         color: #000;
         font-weight: bold;
-        transform: translateY(-9px);
+        transform: scale(1.1);
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.534);
     }
     

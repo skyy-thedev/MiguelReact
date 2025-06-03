@@ -1,174 +1,750 @@
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-.container2 {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: -10px;
-    margin: -10px 0px -10px -270px;
-    font-family: 'Geosanslight', sans-serif;
-    font-size: 20px;
-}
-.container2 #firstItem {
-    transform: translateX(90px);
+/*  DESKTOP Mobile QUERY*/
+@media (min-width: 300px) and (max-width: 768px) {
+    .container {
+        margin-top: 70px;
+        margin-left: -20px;
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+    .container2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0px -10px -50px;
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 20px;
+    }
+    .container2 #firstItem {
+        transform: translateX(60px);
+    }
+    .container2 #lastItem {
+        transform: translateX(-20px);
+    }
+    
+    #leftItems {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    #leftItems h2 {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 35px;
+        filter: drop-shadow(0px 0px 1px black);
+        margin: 0 20px 0px 20px;
+    }
+    #rightItems {
+        margin-top: 10px;
+    }
+    #newAgendamentoBtn {
+        font-family: 'Geosanslight', sans-serif;
+        border-radius: 13px;
+        font-size: 22px;
+        padding: 10px 20px;
+        margin: 0px 10px;
+        background-color: #022031;
+        color: white;
+        border: 1px solid #022031;
+        cursor: pointer;
+        transition: background-color 0.7s, color 0.7s;
+    }
+    #newAgendamentoBtn:hover {
+        background-color: #022031;
+        color: white;
+    }
+    
+    #searchInput {
+        border-radius: 13px;
+        border: 1px solid #022031;
+        padding: 10px 51px;
+        margin: 0px 20px;
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 20px;
+        color: black;
+    }
+    
+    #filtrarBtn {
+        font-family: 'Geosanslight', sans-serif;
+        border-radius: 13px;
+        font-size: 20px;
+        padding: 10px 15px;
+        background-color: #297D94;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-right: 25px;
+        transition: background-color 0.5s;
+    }
+    #filtrarBtn:hover {
+        background-color: #022031;
+    }
+
+    #txtproced {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 24px;
+        margin: 0 30px;
+        margin-bottom: -10px;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .agendamentos-container {
+        padding-bottom: 50px;
+    
+    }
+    .agendamentos-container p {
+        margin: 0 auto;
+        margin-top: 20px;
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 24px;
+        margin-left: 38%;
+    }
+    .agendamentos-container button {
+        font-family: 'Geosanslight', sans-serif;
+        border-radius: 13px;
+        font-size: 20px;
+        padding: 10px 15px;
+        background-color: #297D94;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin: 20px 865px;
+        transition: background-color 0.5s;
+    }
+    
+    .agendamento-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Geosanslight', sans-serif;
+        background-color: #f5f5f579;
+        box-shadow: 0px 0px 3px black;
+        border-radius: 13px;
+        border-bottom: 1px solid #02203199;
+        margin-bottom: 15px;
+        padding: 5px 0px; /* Adicione padding para espaço interno */
+    }
+    
+    .procedName, .userName, .DateHour, .price {
+        cursor: pointer;
+    }
+    
+    .DateHour {
+        margin-right: 20px;
+    }
+
+    .nameAgendamento {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 18px;
+        width: 10%;
+        margin: 0px 30px; /* Remover margens desnecessárias */
+        flex: 1; /* Isso fará com que o nome ocupe o espaço disponível */
+        transition: color 0.5s;
+    }
+    .pacienteAgendamento {
+        text-transform: capitalize;
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 18px;
+        margin: 0px 50px; /* Remover margens desnecessárias */
+        flex: 1; /* Isso fará com que o nome ocupe o espaço disponível */
+        transition: color 0.5s;
+    }
+    
+    .nameProced:hover {
+        color: #022031;
+    }    
+    
+    .dataAgendamento {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 16px;
+        letter-spacing: 1px;
+        margin: -80px -180px 0px 120px; /* Remover margens desnecessárias */
+        flex: 0 0 200px; /* Defina uma largura fixa ou um valor desejado */
+        text-align: center; /* Alinha o texto à direita */
+    }
+    
+    .HoraAgendamento {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 16px;
+        margin: -20px 0px 0px -30px;
+        flex: 0 0 200px; /* Defina uma largura fixa ou um valor desejado */
+        text-align: center; /* Alinha o texto à direita */
+    }
+    
+    .priceAgendamento {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 20px;
+        margin: 0px 90px 0px 0px; /* Remover margens desnecessárias */
+        flex: 0 0 100px; /* Defina uma largura fixa ou um valor desejado */
+        text-align: center; /* Alinha o texto à direita */
+        letter-spacing: 1px;
+    }
+    
+    .icons {
+        display: flex;
+        align-items: center;
+        margin-top: 70px;
+        margin-left: -180px; /* Ajuste conforme necessário */
+        gap: 20px;
+    }
+    #editBtn {
+        cursor: pointer;
+        margin-right: -20px;
+    }
+    #deleteBtn {
+        cursor: pointer;
+        transform: scale(0.7);
+        padding: 10px;
+        margin: 0 auto;
+        background-color: rgb(255, 98, 98);
+        border: 2px solid red;
+        color: white;
+    }
+    #deleteBtn:hover {
+        background-color: red;
+    }
+    
+    .statusBall {
+        width: 30px;
+        height: 93px;
+        border-radius: 30%;
+        display: inline-block;
+        padding: 15px;
+        margin-top: 0px;
+        margin-left: -5px;
+        transition: transform 0.5s ease;
+        cursor: pointer;
+        opacity: 0.8;
+    }
+    
+    .statusBall p {
+        font-family: 'Geosanslight', sans-serif;
+        color: rgba(0, 0, 0, 0); /* Começa invisível */
+        margin: 0px auto;
+        font-size: 20px;
+        transition: transform 0.5s ease, color 1s ease;
+        text-shadow: 1px 1px 0px black;
+        transform: rotate(270deg); /* Ajuste conforme necessário */
+    }
+    
+    .statusBall p .visible {
+        transform: rotate(90deg); /* Mostra e rotaciona o texto quando clicado */
+        color: rgb(255, 255, 255); /* Muda a cor para tornar visível */
+        text-shadow: 1px 1px 1px black;
+    }
+    
+    .statusBall:hover {
+        width: 17px;
+    }
+    
+    .statusBall.green {
+        background: linear-gradient(90deg, #00ff3c, #00ff3c00);
+    }
+    
+    .statusBall.red {
+        background: linear-gradient(90deg, #e21e17c2, #e21e1700);
+    }
+    
+    .statusBall.blue {
+        background-color: rgb(243, 255, 16);
+    }
 }
 
-#leftItems {
-    display: flex;
-    justify-content: space-around;
+/*  DESKTOP HALF HD QUERY*/
+@media (min-width: 1360px) and (max-width: 1600px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+    .container2 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: -10px;
+        margin: -10px 0px -10px -270px;
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 20px;
+    }
+    .container2 #firstItem {
+        transform: translateX(0px);
+    }
+    .DateHour {
+        transform: translateX(-185px);
+    }
+    #leftItems {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    #leftItems h2 {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 35px;
+        filter: drop-shadow(0px 0px 1px black);
+        margin: 0 20px 0px 20px;
+    }
+    
+    #newAgendamentoBtn {
+        font-family: 'Geosanslight', sans-serif;
+        border-radius: 13px;
+        font-size: 22px;
+        padding: 10px 20px;
+        margin: 0px 10px;
+        background-color: #297d9400;
+        color: #022031;
+        border: 1px solid #022031;
+        cursor: pointer;
+        transition: background-color 0.7s, color 0.7s;
+    }
+    #newAgendamentoBtn:hover {
+        background-color: #022031;
+        color: white;
+    }
+    
+    #searchInput {
+        border-radius: 13px;
+        border: 1px solid #022031;
+        padding: 10px;
+        margin: 0px 20px;
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 20px;
+        color: black;
+    }
+    
+    #filtrarBtn {
+        font-family: 'Geosanslight', sans-serif;
+        border-radius: 13px;
+        font-size: 20px;
+        padding: 10px 15px;
+        background-color: #297D94;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-right: 50px;
+        transition: background-color 0.5s;
+    }
+    #filtrarBtn:hover {
+        background-color: #022031;
+    }
+    
+    #txtproced {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 24px;
+        margin: 0 30px;
+        margin-bottom: -10px;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .agendamentos-container {
+        padding-bottom: 50px;
+    
+    }
+    .agendamentos-container p {
+        margin: 0 auto;
+        margin-top: 20px;
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 24px;
+        margin-left: 38%;
+    }
+    .agendamentos-container button {
+        font-family: 'Geosanslight', sans-serif;
+        border-radius: 13px;
+        font-size: 20px;
+        padding: 10px 15px;
+        background-color: #297D94;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin: 20px 865px;
+        transition: background-color 0.5s;
+    }
+    
+    .agendamento-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Geosanslight', sans-serif;
+        background-color: #f5f5f579;
+        box-shadow: 0px 0px 3px black;
+        border-radius: 13px;
+        border-bottom: 1px solid #02203199;
+        margin-bottom: 15px;
+        padding: 0px; /* Adicione padding para espaço interno */
+    }
+    
+    .procedName, .userName, .DateHour, .price {
+        cursor: pointer;
+    }
+    .nameAgendamento {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 18px;
+        margin: 0px 50px; /* Remover margens desnecessárias */
+        flex: 1; /* Isso fará com que o nome ocupe o espaço disponível */
+        transition: color 0.5s;
+    }
+    .pacienteAgendamento {
+        text-transform: capitalize;
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 18px;
+        margin: 0px 50px; /* Remover margens desnecessárias */
+        flex: 1; /* Isso fará com que o nome ocupe o espaço disponível */
+        transition: color 0.5s;
+    }
+    
+    .nameProced:hover {
+        color: #022031;
+    }
+    
+    
+    .dataAgendamento {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 18px;
+        letter-spacing: 1px;
+        margin: 0px -110px 0px 50px; /* Remover margens desnecessárias */
+        flex: 0 0 200px; /* Defina uma largura fixa ou um valor desejado */
+        text-align: center; /* Alinha o texto à direita */
+    }
+    
+    .HoraAgendamento {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 20px;
+        margin: 0px 200px 0px 0px; /* Remover margens desnecessárias */
+        flex: 0 0 200px; /* Defina uma largura fixa ou um valor desejado */
+        text-align: center; /* Alinha o texto à direita */
+    }
+    
+    .priceAgendamento {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 20px;
+        margin: 0px 90px 0px 0px; /* Remover margens desnecessárias */
+        flex: 0 0 100px; /* Defina uma largura fixa ou um valor desejado */
+        text-align: center; /* Alinha o texto à direita */
+        letter-spacing: 1px;
+    }
+    
+    .icons {
+        display: flex;
+        align-items: center;
+        margin-right: 100px; /* Ajuste conforme necessário */
+        gap: 20px;
+    }
+    #editBtn {
+        cursor: pointer;
+    }
+    #deleteBtn {
+        cursor: pointer;
+        padding: 10px;
+        margin: 0 auto;
+        background-color: rgb(255, 98, 98);
+        border: 2px solid red;
+        color: white;
+    }
+    #deleteBtn:hover {
+        background-color: red;
+    }
+    
+    .statusBall {
+        width: 10px;
+        height: 60px;
+        border-radius: 30%;
+        display: inline-block;
+        padding: 10px;
+        margin-top: 0px;
+        margin-left: -10px;
+        transition: transform 0.5s ease;
+        cursor: pointer;
+    }
+    
+    .statusBall p {
+        font-family: 'Geosanslight', sans-serif;
+        color: rgba(0, 0, 0, 0); /* Começa invisível */
+        margin: 0px auto;
+        font-size: 20px;
+        transition: transform 0.5s ease, color 1s ease;
+        text-shadow: 1px 1px 0px black;
+        transform: rotate(270deg); /* Ajuste conforme necessário */
+    }
+    
+    .statusBall p .visible {
+        transform: rotate(90deg); /* Mostra e rotaciona o texto quando clicado */
+        color: rgb(255, 255, 255); /* Muda a cor para tornar visível */
+        text-shadow: 1px 1px 1px black;
+    }
+    
+    .statusBall:hover {
+        width: 17px;
+    }
+    
+    .statusBall.green {
+        background: linear-gradient(90deg, #00ff3c, #00ff3c00);
+    }
+    
+    .statusBall.red {
+        background: linear-gradient(90deg, #e21e17c2, #e21e1700);
+    }
+    
+    .statusBall.blue {
+        background-color: lightblue;
+    }
 }
 
-#leftItems h2 {
-    font-family: 'Geosanslight', sans-serif;
-    font-size: 35px;
-    filter: drop-shadow(0px 0px 1px black);
-    margin: 0 20px 0px 20px;
-}
+/*  DESKTOP FULL HD QUERY*/
+@media (min-width: 1601px) and (max-width: 1920px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+    .container2 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: -10px;
+        margin: -10px 0px -10px -270px;
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 20px;
+    }
+    .container2 #firstItem {
+        transform: translateX(-140px);
+    }
 
-#newAgendamentoBtn {
-    font-family: 'Geosanslight', sans-serif;
-    border-radius: 13px;
-    font-size: 22px;
-    padding: 10px 20px;
-    margin: 0px 10px;
-    background-color: #297d9400;
-    color: #022031;
-    border: 1px solid #022031;
-    cursor: pointer;
-    transition: background-color 0.7s, color 0.7s;
-}
-#newAgendamentoBtn:hover {
-    background-color: #022031;
-    color: white;
-}
+    .container2 #lastItem {
+        transform: translateX(-135px);
+    }
+    
+    #leftItems {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    #leftItems h2 {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 35px;
+        filter: drop-shadow(0px 0px 1px black);
+        margin: 0 20px 0px 20px;
+    }
+    
+    #newAgendamentoBtn {
+        font-family: 'Geosanslight', sans-serif;
+        border-radius: 13px;
+        font-size: 22px;
+        padding: 10px 20px;
+        margin: 0px 10px;
+        background-color: #297d9400;
+        color: #022031;
+        border: 1px solid #022031;
+        cursor: pointer;
+        transition: background-color 0.7s, color 0.7s;
+    }
+    #newAgendamentoBtn:hover {
+        background-color: #022031;
+        color: white;
+    }
+    
+    #searchInput {
+        border-radius: 13px;
+        border: 1px solid #022031;
+        padding: 10px;
+        margin: 0px 20px;
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 20px;
+        color: black;
+    }
+    
+    #filtrarBtn {
+        font-family: 'Geosanslight', sans-serif;
+        border-radius: 13px;
+        font-size: 20px;
+        padding: 10px 15px;
+        background-color: #297D94;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-right: 50px;
+        transition: background-color 0.5s;
+    }
+    #filtrarBtn:hover {
+        background-color: #022031;
+    }
+    
+    #txtproced {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 24px;
+        margin: 0 30px;
+        margin-bottom: -10px;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .agendamentos-container {
+        padding-bottom: 50px;
+    
+    }
+    .agendamentos-container p {
+        margin: 0 auto;
+        margin-top: 20px;
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 24px;
+        margin-left: 38%;
+    }
+    .agendamentos-container button {
+        font-family: 'Geosanslight', sans-serif;
+        border-radius: 13px;
+        font-size: 20px;
+        padding: 10px 15px;
+        background-color: #297D94;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin: 20px 865px;
+        transition: background-color 0.5s;
+    }
+    
+    .agendamento-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Geosanslight', sans-serif;
+        background-color: #f5f5f579;
+        box-shadow: 0px 0px 3px black;
+        border-radius: 13px;
+        border-bottom: 1px solid #02203199;
+        margin-bottom: 15px;
+        padding: 0px; /* Adicione padding para espaço interno */
+    }
+    
+    .procedName, .userName, .DateHour, .price {
+        cursor: pointer;
+    }
+    
+    .DateHour {
+        transform: translateX(-50px);
+    }
 
-#searchInput {
-    border-radius: 13px;
-    border: 1px solid #022031;
-    padding: 10px;
-    margin: 0px 20px;
-    font-family: 'Geosanslight', sans-serif;
-    font-size: 20px;
-    color: black;
-}
-
-#filtrarBtn {
-    font-family: 'Geosanslight', sans-serif;
-    border-radius: 13px;
-    font-size: 20px;
-    padding: 10px 15px;
-    background-color: #297D94;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-right: 50px;
-    transition: background-color 0.5s;
-}
-#filtrarBtn:hover {
-    background-color: #022031;
-}
-
-#txtproced {
-    font-family: 'Geosanslight', sans-serif;
-    font-size: 24px;
-    margin: 0 30px;
-    margin-bottom: -10px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-.agendamentos-container {
-    padding-bottom: 50px;
-
-}
-.agendamentos-container p {
-    margin: 0 auto;
-    margin-top: 20px;
-    font-family: 'Geosanslight', sans-serif;
-    font-size: 24px;
-    margin-left: 38%;
-}
-.agendamentos-container button {
-    font-family: 'Geosanslight', sans-serif;
-    border-radius: 13px;
-    font-size: 20px;
-    padding: 10px 15px;
-    background-color: #297D94;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin: 20px 865px;
-    transition: background-color 0.5s;
-}
-
-.agendamento-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Geosanslight', sans-serif;
-    border-bottom: 1px solid #02203199;
-    margin-bottom: 15px;
-    padding: 0px; /* Adicione padding para espaço interno */
-}
-.nameAgendamento {
-    font-family: 'Geosanslight', sans-serif;
-    font-size: 18px;
-    margin: 0px 50px; /* Remover margens desnecessárias */
-    flex: 1; /* Isso fará com que o nome ocupe o espaço disponível */
-    transition: color 0.5s;
-}
-.pacienteAgendamento {
-    font-family: 'Geosanslight', sans-serif;
-    font-size: 18px;
-    margin: 0px 50px; /* Remover margens desnecessárias */
-    flex: 1; /* Isso fará com que o nome ocupe o espaço disponível */
-    transition: color 0.5s;
-}
-
-.nameProced:hover {
-    color: #022031;
-}
-.dataAgendamento {
-    font-family: 'Geosanslight', sans-serif;
-    font-size: 18px;
-    margin: 0px -120px 0px 50px; /* Remover margens desnecessárias */
-    flex: 0 0 200px; /* Defina uma largura fixa ou um valor desejado */
-    text-align: center; /* Alinha o texto à direita */
-}
-
-.HoraAgendamento {
-    font-family: 'Geosanslight', sans-serif;
-    font-size: 20px;
-    margin: 0px 250px 0px 0px; /* Remover margens desnecessárias */
-    flex: 0 0 200px; /* Defina uma largura fixa ou um valor desejado */
-    text-align: center; /* Alinha o texto à direita */
-}
-
-.priceAgendamento {
-    font-family: 'Geosanslight', sans-serif;
-    font-size: 20px;
-    margin: 0px 100px 0px 0px; /* Remover margens desnecessárias */
-    flex: 0 0 100px; /* Defina uma largura fixa ou um valor desejado */
-    text-align: center; /* Alinha o texto à direita */
-    letter-spacing: 1px;
-}
-
-.icons {
-    display: flex;
-    align-items: center;
-    margin-right: 100px; /* Ajuste conforme necessário */
-    gap: 20px;
-}
-#editBtn {
-    cursor: pointer;
-}
-#deleteBtn {
-    cursor: pointer;
+    .nameAgendamento {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 18px;
+        margin: 0px 50px; /* Remover margens desnecessárias */
+        flex: 1; /* Isso fará com que o nome ocupe o espaço disponível */
+        transition: color 0.5s;
+    }
+    .pacienteAgendamento {
+        text-transform: capitalize;
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 18px;
+        margin: 0px 50px; /* Remover margens desnecessárias */
+        flex: 1; /* Isso fará com que o nome ocupe o espaço disponível */
+        transition: color 0.5s;
+    }
+    
+    .nameProced:hover {
+        color: #022031;
+    }
+    
+    
+    .dataAgendamento {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 18px;
+        letter-spacing: 1px;
+        margin: 0px -110px 0px 50px; /* Remover margens desnecessárias */
+        flex: 0 0 200px; /* Defina uma largura fixa ou um valor desejado */
+        text-align: center; /* Alinha o texto à direita */
+    }
+    
+    .HoraAgendamento {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 20px;
+        margin: 0px 200px 0px 0px; /* Remover margens desnecessárias */
+        flex: 0 0 200px; /* Defina uma largura fixa ou um valor desejado */
+        text-align: center; /* Alinha o texto à direita */
+    }
+    
+    .priceAgendamento {
+        font-family: 'Geosanslight', sans-serif;
+        font-size: 20px;
+        margin: 0px 90px 0px 0px; /* Remover margens desnecessárias */
+        flex: 0 0 100px; /* Defina uma largura fixa ou um valor desejado */
+        text-align: center; /* Alinha o texto à direita */
+        letter-spacing: 1px;
+    }
+    
+    .icons {
+        display: flex;
+        align-items: center;
+        margin-right: 100px; /* Ajuste conforme necessário */
+        gap: 20px;
+    }
+    #editBtn {
+        cursor: pointer;
+    }
+    #deleteBtn {
+        cursor: pointer;
+        padding: 10px;
+        margin: 0 auto;
+        background-color: rgb(255, 98, 98);
+        border: 2px solid red;
+        color: white;
+    }
+    #deleteBtn:hover {
+        background-color: red;
+    }
+    
+    .statusBall {
+        width: 10px;
+        height: 60px;
+        border-radius: 30%;
+        display: inline-block;
+        padding: 10px;
+        margin-top: 0px;
+        margin-left: -10px;
+        transition: transform 0.5s ease;
+        cursor: pointer;
+    }
+    
+    .statusBall p {
+        font-family: 'Geosanslight', sans-serif;
+        color: rgba(0, 0, 0, 0); /* Começa invisível */
+        margin: 0px auto;
+        font-size: 20px;
+        transition: transform 0.5s ease, color 1s ease;
+        text-shadow: 1px 1px 0px black;
+        transform: rotate(270deg); /* Ajuste conforme necessário */
+    }
+    
+    .statusBall p .visible {
+        transform: rotate(90deg); /* Mostra e rotaciona o texto quando clicado */
+        color: rgb(255, 255, 255); /* Muda a cor para tornar visível */
+        text-shadow: 1px 1px 1px black;
+    }
+    
+    .statusBall:hover {
+        width: 17px;
+    }
+    
+    .statusBall.green {
+        background: linear-gradient(90deg, #00ff3c, #00ff3c00);
+    }
+    
+    .statusBall.red {
+        background: linear-gradient(90deg, #e21e17c2, #e21e1700);
+    }
+    
+    .statusBall.blue {
+        background-color: rgb(242, 255, 0);
+    }
 }

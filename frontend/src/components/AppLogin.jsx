@@ -47,6 +47,7 @@ const AppLogin = () => {
 
       localStorage.setItem('userName', data.user.name);
       localStorage.setItem('userId', data.user.id);
+      localStorage.setItem('userId', data.user.privilegies);
 
       showSuccess('Login realizado com sucesso!');
       // Esperar um tempo antes de redirecionar
