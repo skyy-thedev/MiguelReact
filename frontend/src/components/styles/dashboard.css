@@ -415,10 +415,9 @@
   border: 1px solid #022031;
   box-shadow: 0px 1px 5px #022031;
   padding: 0px 20px;
-  margin: 10px 8vw;
+  margin: 10px 6vw;
   text-align: left;
   font-family: 'Geosanslight', sans-serif;
-  font-size: 18px;
 }
 
 .statsContainer {
@@ -428,7 +427,7 @@
   gap: 15px;
   position: absolute;
   text-align: center;
-  top: 23vh;
+  top: 22vh;
   right: 100px;
 }
 
@@ -470,11 +469,12 @@
   gap: 20px; /* Espaçamento entre o ícone e o texto */
   margin-bottom: -15px;
   margin-top: -30px;
-  font-size: 20px;
+  font-size: 17px;
 }
+
 .infoItem i {
   text-align: right;
-  font-size: 30px;
+  font-size: 25px;
   width: 20px;
 }
 #dollar {
@@ -483,7 +483,7 @@
 }
 
 .statBox {
-  width: calc(15% + 15px); /* Para dividir igualmente em 3 colunas */
+  width: calc(15% + 25px); /* Para dividir igualmente em 3 colunas */
   height: 80px;
   background-color: #022031;
   padding: 20px;
@@ -495,18 +495,20 @@
   align-items: center;
   margin-bottom: 15px; /* Adiciona espaçamento entre as linhas */
   cursor: pointer;
-  transition: background-color 1s ease;
+  transition: 0.5s all ease;
 }
 
 .statBox:hover {
   background-color: #297D94;
+  transform: scale(1.05);
 }
+
 .statBox h4 {
   font-size: 18px;
   margin-top: 5px;
   margin-bottom: 10px;
-  width: 80%;
-  font-size: 16px;
+  width: 85%;
+  font-size: 18px;
   color: white;
 }
 
