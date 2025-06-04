@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+require('dotenv').config();
 const userRoutes = require('./routes/userRoutes'); // Importa o arquivo de rotas
 const agendamentoRoutes = require('./routes/agendamentoRoutes');
 const proceduresRoutes = require('./routes/procedures');
@@ -13,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // Conectar ao banco de dados MongoDB
-mongoose.connect('mongodb+srv://ohskyz123:GSDBZ7c1rrgYCQP0@cluster0.liqth.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })

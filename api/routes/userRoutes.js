@@ -1,7 +1,7 @@
 const express = require('express');
 const User = require('../models/User'); // Verifique se o caminho está correto
 const Procedure = require('../models/Procedure');
-const bcrypt = require('bcrypt'); // Para hash de senhas
+const bcrypt = require('bcryptjs'); // Para hash de senhas
 const router = express.Router();
 
 // Rota para registrar um novo usuário
