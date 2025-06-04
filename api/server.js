@@ -11,7 +11,18 @@ const proceduresRoutes = require('./routes/procedures');
 const app = express();
 
 // Middleware
-app.use(cors());
+const allowedOrigins = ['https://miguel-react.vercel.app'];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
 app.use(express.json());
 
 // Conectar ao banco de dados MongoDB
