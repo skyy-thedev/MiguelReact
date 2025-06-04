@@ -14,7 +14,7 @@
     "start": "concurrently -s \"powershell\" \"npm run start:api\" \"npm run start:frontend\"",
     "start:api": "node api/server.js",
     "start:frontend": "react-scripts start",
-    "build": "cd frontend && npm run build"
+    "build": "react-scripts build"
   },
   "devDependencies": {
     "concurrently": "^9.0.1",
