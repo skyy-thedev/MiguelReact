@@ -11,9 +11,7 @@
     "react-router-dom": "^6.27.0"
   },
   "scripts": {
-    "start": "concurrently -s \"powershell\" \"npm run start:api\" \"npm run start:frontend\"",
-    "start:api": "node api/server.js",
-    "start:frontend": "react-scripts start",
+    "start": "react-scripts star",
     "build": "react-scripts build"
   },
   "devDependencies": {
