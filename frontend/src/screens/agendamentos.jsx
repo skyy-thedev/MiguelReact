@@ -22,6 +22,7 @@ const Agendamentos = () => {
   const [agendamentoId, setAgendamentoId] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false); // Estado para o modal de agendamento
   const { error, success, showError, showSuccess } = useAlert();
+  const baseURL = process.env.REACT_APP_API_BASE_URL;
 
   const formatarData = (dataString) => {
     const data = new Date(dataString);
@@ -45,7 +46,7 @@ const Agendamentos = () => {
       console.log("Usuário:", user);
       console.log("Privilégios do usuário:", user.privilegies);
   
-      const response = await fetch('http://localhost:5000/api/agendamentos/agendamentos');
+      const response = await fetch(`${baseURL}/api/agendamentos/agendamentos`);
       const data = await response.json();
       let agendamentosFiltrados;
   
@@ -145,7 +146,7 @@ const ordenarPorValor = (agendamentos, isAscending = true) => {
     if (!agendamentoId) return;
   
     try {
-      const response = await fetch(`http://localhost:5000/api/agendamentos/${agendamentoId}`, {
+      const response = await fetch(`${baseURL}/api/agendamentos/${agendamentoId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: 'Cancelado' })

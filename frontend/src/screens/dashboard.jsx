@@ -15,6 +15,7 @@ const Dashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [agendamentos, setAgendamentos] = useState([]);
   const { error, success, showError, showSuccess } = useAlert();
+  const baseURL = process.env.REACT_APP_API_BASE_URL;
 
   const dataAtual = (mostrarMes = false) => {
     const hoje = new Date();
@@ -47,7 +48,7 @@ const Dashboard = () => {
 
   const fetchAgendamentos = useCallback(async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/agendamentos/agendamentos');
+      const response = await fetch(`${baseURL}/api/agendamentos/agendamentos`);
       const data = await response.json();
       const filteredAgendamentos = hasPrivileges() === 'admin' ? data : data.filter(agendamento => agendamento.userName === user.name);
       setAgendamentos(filteredAgendamentos);

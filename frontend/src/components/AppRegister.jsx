@@ -8,6 +8,7 @@ import FundoScreen from '../assets/heroslider/fundo.jpg';
 import axios from 'axios'; // Não esqueça de importar o Axios
 
 const AppRegister = () => {
+  const baseURL = process.env.REACT_APP_API_BASE_URL;
   const [registerData, setRegisterData] = useState({
     name: '',
     email: '',
@@ -38,7 +39,7 @@ const AppRegister = () => {
 
     console.log("Dados de registro:", registerData);
     try {
-      const response = await axios.post('http://localhost:5000/api/users/register', registerData);
+      const response = await axios.post(`${baseURL}/api/users/register`, registerData);
       login(response.data.user); // Armazenar o usuário em cookies
       navigate('/Agendamentos');
     } catch (error) {

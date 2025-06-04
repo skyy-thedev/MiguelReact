@@ -13,12 +13,13 @@ const ScreenProced = ({ searchTerm, procedimentos, setProcedimentos }) => {
     const { error, success, showError, showSuccess } = useAlert();
     const [procedimentoNome, setProcedimentoNome] = useState(null); // Usar nome do procedimento
     const { user, hasPrivileges } = useAuth();
+    const baseURL = process.env.REACT_APP_API_BASE_URL;
 
     const confirmDelete = async () => {
         if (!procedimentoNome) return; // Verifica se procedimentoNome está definido
       
         try {
-            const response = await fetch(`http://localhost:5000/api/procedures/${encodeURIComponent(procedimentoNome)}`, { // Endpoint alterado para buscar pelo nome
+            const response = await fetch(`${baseURL}/api/procedures/${encodeURIComponent(procedimentoNome)}`, { // Endpoint alterado para buscar pelo nome
                 method: 'DELETE',
             });
       
@@ -91,10 +92,11 @@ const AgendamentoProced = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [procedimentos, setProcedimentos] = useState([]);
     const { user, hasPrivileges } = useAuth();
+    const baseURL = process.env.REACT_APP_API_BASE_URL;
 
     const fetchProcedimentos = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/users/procedures');
+            const response = await axios.get(`${baseURL}/api/users/procedures`);
             setProcedimentos(response.data);
         } catch (error) {
             console.error('Erro ao buscar procedimentos:', error);

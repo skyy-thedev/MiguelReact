@@ -12,6 +12,7 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
   const [step, setStep] = useState(1);
   const { user } = useAuth();
   const { error, success, showError, showSuccess } = useAlert();
+  const baseURL = process.env.REACT_APP_API_BASE_URL;
   const [procedures, setProcedures] = useState([]);
   const [appointmentDetails, setAppointmentDetails] = useState({
     procedimento: '',
@@ -28,7 +29,7 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
   useEffect(() => {
     const fetchProcedures = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/procedures');
+        const response = await axios.get(`${baseURL}/api/procedures`);
         if (response.status === 200) {
           setProcedures(response.data);
         } else {
@@ -46,7 +47,7 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
 
   const fetchRecommendedAppointments = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/recomendacoes');
+      const response = await axios.get(`${baseURL}/api/recomendacoes`);
       if (response.status === 200) {
         setRecommendedAppointments(response.data);
       }
@@ -81,7 +82,7 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
     try {
       setLoadingTimes(true); // Inicia carregamento
       const formattedDate = date.toISOString().split('T')[0];
-      const response = await axios.get('http://localhost:5000/api/horarios-disponiveis', {
+      const response = await axios.get(`${baseURL}/api/horarios-disponiveis`, {
         params: { date: formattedDate, procedure: appointmentDetails.procedimento }
       });
       if (response.status === 200) {
@@ -103,7 +104,7 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
   const criarAgendamentoAPI = async (appointmentDetails) => {
     try {
       console.log("Dados enviados para a API:", appointmentDetails);
-      const response = await axios.post('http://localhost:5000/api/agendamentos', appointmentDetails);
+      const response = await axios.post(`${baseURL}/api/agendamentos`, appointmentDetails);
   
       console.log("Resposta da API:", response.data); // Verifica o conteúdo da resposta
   

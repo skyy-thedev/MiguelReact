@@ -8,6 +8,7 @@ import AlertSystem from '../components/alerts/alertSystem';
 import useAlert from '../components/alerts/useAlert';
 
 const AppLogin = () => {
+  const baseURL = process.env.REACT_APP_API_BASE_URL;
   const [loginData, setLoginData] = useState({
     email: '',
     password: '',
@@ -29,7 +30,7 @@ const AppLogin = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/users/login', {
+      const response = await fetch(`${baseURL}/api/users/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
