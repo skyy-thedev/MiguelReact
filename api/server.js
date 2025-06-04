@@ -4,6 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes'); // Importa o arquivo de rotas
 const agendamentoRoutes = require('./routes/agendamentoRoutes');
+const proceduresRoutes = require('./routes/procedures');
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Conectar ao banco de dados MongoDB
-mongoose.connect('mongodb+srv://ohskyz123:ozzdwewHGpMbEtod@cluster0.liqth.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://ohskyz123:GSDBZ7c1rrgYCQP0@cluster0.liqth.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -21,6 +22,9 @@ mongoose.connect('mongodb+srv://ohskyz123:ozzdwewHGpMbEtod@cluster0.liqth.mongod
   // Usar as rotas de usuário após a conexão com o banco de dados
   app.use('/api/users', userRoutes); // Aqui é onde você define as rotas
   app.use('/api/agendamentos', agendamentoRoutes);
+  app.use('/api/procedures', proceduresRoutes);
+  app.use('/api', agendamentoRoutes);
+
 })
 .catch(err => console.error('Erro ao conectar ao MongoDB:', err));
 

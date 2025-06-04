@@ -1,6 +1,6 @@
 const express = require('express');
 const User = require('../models/User'); // Verifique se o caminho está correto
-const Procedure = require('../models/Procedure.js');
+const Procedure = require('../models/Procedure');
 const bcrypt = require('bcrypt'); // Para hash de senhas
 const router = express.Router();
 
@@ -27,7 +27,7 @@ router.post('/register', async (req, res) => {
         const newUser = new User({ name, email, password: hashedPassword, privilegies });
         await newUser.save();
 
-        res.status(201).json({ user: { id: newUser._id, name: newUser.name, email: newUser.email } });
+        res.status(201).json({ user: { id: newUser._id, name: newUser.name, email: newUser.email, privilegies: newUser.privilegies } });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Erro ao registrar o usuário', error: error.message });
@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
             return res.status(400).json({ message: 'Credenciais inválidas' });
         }
 
-        res.status(200).json({ user: { id: user._id, name: user.name, email: user.email } });
+        res.status(200).json({ user: { id: user._id, name: user.name, email: user.email, privilegies: user.privilegies } });
     } catch (error) {
         res.status(500).json({ message: 'Erro ao fazer login', error });
     }

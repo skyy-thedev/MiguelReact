@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
 
 const procedureSchema = new mongoose.Schema({
-  name: {
+  nome: {
     type: String,
     required: true,
+    unique: true
   },
   description: {
     type: String,
-    required: true,
+    required: false,
   },
-  price: {
+  valor: {
     type: Number,
     required: true,
   },

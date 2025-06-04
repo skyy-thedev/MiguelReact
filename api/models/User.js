@@ -15,8 +15,8 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     privilegies: {
-        type: Boolean,
-        default: false,
+        type: String,
+        default: 'user',
     }
 });
 
