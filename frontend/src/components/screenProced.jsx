@@ -13,7 +13,7 @@ const ScreenProced = ({ searchTerm, procedimentos, setProcedimentos }) => {
     const { error, success, showError, showSuccess } = useAlert();
     const [procedimentoNome, setProcedimentoNome] = useState(null); // Usar nome do procedimento
     const { user, hasPrivileges } = useAuth();
-    const baseURL = process.env.REACT_APP_API_BASE_URL;
+    const baseURL = process.env.REACT_APP_LOCAL_API_URL; 
 
     const confirmDelete = async () => {
         if (!procedimentoNome) return; // Verifica se procedimentoNome está definido
@@ -92,7 +92,7 @@ const AgendamentoProced = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [procedimentos, setProcedimentos] = useState([]);
     const { user, hasPrivileges } = useAuth();
-    const baseURL = process.env.REACT_APP_API_BASE_URL;
+    const baseURL = process.env.REACT_APP_LOCAL_API_URL;
 
     const fetchProcedimentos = async () => {
         try {

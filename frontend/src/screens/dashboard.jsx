@@ -15,7 +15,7 @@ const Dashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [agendamentos, setAgendamentos] = useState([]);
   const { error, success, showError, showSuccess } = useAlert();
-  const baseURL = process.env.REACT_APP_API_BASE_URL;
+  const baseURL = process.env.REACT_APP_LOCAL_API_URL;
 
   const dataAtual = (mostrarMes = false) => {
     const hoje = new Date();

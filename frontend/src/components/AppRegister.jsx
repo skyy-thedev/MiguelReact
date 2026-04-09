@@ -8,7 +8,7 @@ import FundoScreen from '../assets/heroslider/fundo.jpg';
 import axios from 'axios'; // Não esqueça de importar o Axios
 
 const AppRegister = () => {
-  const baseURL = process.env.REACT_APP_API_BASE_URL;
+  const baseURL = process.env.REACT_APP_LOCAL_API_URL;
   const [registerData, setRegisterData] = useState({
     name: '',
     email: '',

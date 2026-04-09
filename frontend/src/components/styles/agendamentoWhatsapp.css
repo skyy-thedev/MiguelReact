@@ -1,0 +1,263 @@
+/* =============================================
+   AGENDAMENTO WHATSAPP — Mobile-First
+   ============================================= */
+
+.agendamento-section {
+  padding: var(--space-xl) var(--space-md);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+}
+
+.agendamento-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.agendamento-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.agendamento-header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--white);
+  margin-bottom: var(--space-sm);
+}
+
+.agendamento-header p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: rgba(185, 225, 236, 0.85);
+  line-height: 1.6;
+}
+
+/* Form Card */
+.agendamento-form {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-md);
+  box-shadow: var(--shadow-xl);
+}
+
+.agendamento-form .form-group {
+  margin-bottom: var(--space-md);
+}
+
+.agendamento-form label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.agendamento-form input,
+.agendamento-form select,
+.agendamento-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--primary);
+  background: var(--gray-50);
+  transition: border-color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease;
+  box-sizing: border-box;
+}
+
+.agendamento-form input:focus,
+.agendamento-form select:focus,
+.agendamento-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  background: var(--white);
+}
+
+.agendamento-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23297D94' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.agendamento-form textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+/* WhatsApp Button */
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 20px;
+  background: var(--green-whatsapp);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--duration-fast) ease,
+              transform var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+  margin-top: var(--space-sm);
+}
+
+.btn-whatsapp:hover:not(:disabled) {
+  background: #1fb855;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp:disabled {
+  background: var(--gray-300);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-whatsapp.enviado {
+  background: #1fb855;
+  animation: agendaPulse 0.6s ease-in-out;
+}
+
+.btn-whatsapp .wapp-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* Info */
+.agendamento-info {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: 0 var(--space-xs);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: rgba(224, 247, 250, 0.85);
+}
+
+.info-icon {
+  font-size: 1.2em;
+}
+
+/* =============================================
+   TABLET (768px+)
+   ============================================= */
+@media (min-width: 768px) {
+  .agendamento-section {
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  .agendamento-container {
+    max-width: 600px;
+  }
+
+  .agendamento-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .agendamento-header p {
+    font-size: 1.1rem;
+  }
+
+  .agendamento-form {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .agendamento-form .form-group {
+    margin-bottom: var(--space-md);
+  }
+
+  .btn-whatsapp {
+    font-size: 1.15rem;
+    padding: 15px 24px;
+  }
+
+  .agendamento-info {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+}
+
+/* =============================================
+   DESKTOP (1024px+)
+   ============================================= */
+@media (min-width: 1024px) {
+  .agendamento-section {
+    padding: var(--space-3xl) var(--space-xl);
+  }
+
+  .agendamento-container {
+    max-width: 650px;
+  }
+
+  .agendamento-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .agendamento-form {
+    padding: var(--space-xl);
+    transition: transform var(--duration-normal) var(--ease-out);
+  }
+
+  .agendamento-form:hover {
+    transform: translateY(-4px);
+  }
+
+  .agendamento-form input,
+  .agendamento-form select,
+  .agendamento-form textarea {
+    padding: 14px 18px;
+    font-size: 1.05rem;
+  }
+
+  .btn-whatsapp {
+    font-size: 1.2rem;
+    padding: 16px 28px;
+    border-radius: var(--radius-md);
+  }
+
+  .btn-whatsapp:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
+  }
+
+  .info-item {
+    font-size: 1rem;
+    transition: color var(--duration-fast) ease;
+  }
+
+  .info-item:hover {
+    color: var(--white);
+  }
+}
+
+/* Animation */
+@keyframes agendaPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}

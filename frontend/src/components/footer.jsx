@@ -2,11 +2,13 @@ import React from "react";
 import './styles/footer.css';
 
 const Footer = () => (
-
-    <div className="Creditos">
-        <a href='https://www.skyzdesign.com.br'><h3>© 2024 SKYZ DESIGN <br/> Todos os direitos reservados. </h3></a>
+  <footer className="footer">
+    <div className="footer__container">
+      <a href="https://www.skyzdesign.com.br" className="footer__link" target="_blank" rel="noreferrer">
+        © 2025 SKYZ DESIGN — Todos os direitos reservados.
+      </a>
     </div>
-
+  </footer>
 );
 
 export default Footer;

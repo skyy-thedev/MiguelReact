@@ -1,67 +1,60 @@
-@media (min-width: 300px) and (max-width: 768px) {
-    .localizacao {
-        margin-top: -50px;
-        margin-bottom: 100px;
-        width: 100%;
-        height: 140px;
-        background: linear-gradient(90deg, #022031, #297D94);
-        font-family: 'Geosanslight', sans-serif;
-        text-align: center;
-        color: white;
-    }
-    .localizacao h2 {
-        margin-top: 20px;
-        padding-top: 15px;
-        font-size: 2em;
-    }
-    .localizacao h3 {
-        font-size: 1.5em;
-        margin: -15px 50px 0px 50px;
-    }
+/* =============================================
+   SECTION DIVIDER (Localização) — Mobile-First
+   ============================================= */
+
+.section-divider {
+  padding: var(--space-xl) var(--space-md);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  text-align: center;
 }
 
-/* DESKTOP HALF HD QUERY */
-@media (min-width: 769px) and (max-width: 1366px) {
-    .localizacao {
-        margin-top: -50px;
-        margin-bottom: 100px;
-        width: 100%;
-        height: 125px;
-        background: linear-gradient(90deg, #022031, #297D94);
-        font-family: 'Geosanslight', sans-serif;
-        text-align: center;
-        color: white;
-    }
-    .localizacao h2 {
-        margin-top: 20px;
-        padding-top: 15px;
-        font-size: 2em;
-    }
-    .localizacao h3 {
-        font-size: 1.5em;
-        margin: -15px 50px 0px 50px;
-    }
+.section-divider__content {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-/* DESKTOP QUERY */
-@media (min-width: 1367px) and (max-width: 1920px) {
-    .localizacao {
-        margin-top: -50px;
-        margin-bottom: 100px;
-        width: 100%;
-        height: 125px;
-        background: linear-gradient(90deg, #022031, #297D94);
-        font-family: 'Geosanslight', sans-serif;
-        text-align: center;
-        color: white;
-    }
-    .localizacao h2 {
-        margin-top: 20px;
-        padding-top: 15px;
-        font-size: 2em;
-    }
-    .localizacao h3 {
-        font-size: 1.5em;
-        margin: -15px 50px 0px 50px;
-    }
+.section-divider__title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--white);
+  margin-bottom: var(--space-sm);
+  letter-spacing: 2px;
+}
+
+.section-divider__subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .section-divider {
+    padding: var(--space-xl) var(--space-xl);
+  }
+
+  .section-divider__title {
+    font-size: 2.2rem;
+  }
+
+  .section-divider__subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .section-divider {
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  .section-divider__title {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+
+  .section-divider__subtitle {
+    font-size: 1.25rem;
+  }
 }

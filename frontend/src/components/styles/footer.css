@@ -1,174 +1,52 @@
-@media (min-width: 300px) and (max-width: 350px) {
-    .Creditos { 
-        position: fixed;
-        width: 100%;
-        height: 40px;
-        bottom: 0px;
-        text-align: center;
-        background-color: rgb(0, 0, 0);
-        z-index: 999;
-    }
-    .Creditos h3 {
-        font-family: 'Geosanslight', sans-serif;
-        font-weight: 200;
-        font-size: 11px;
-        letter-spacing: 2px;
-    }
-    .Creditos a {
-        text-decoration: none;
-        color: white;
-        transition: 0.5s ease;
-    }
-    .Creditos a:hover {
-        color: #06A1B4;
-    }
-}
-@media (min-width: 351px) and (max-width: 415px) {
-    .Creditos { 
-        position: fixed;
-        width: 100%;
-        height: 40px;
-        bottom: 0px;
-        text-align: center;
-        background-color: rgb(0, 0, 0);
-        z-index: 999;
-    }
-    .Creditos h3 {
-        font-family: 'Geosanslight', sans-serif;
-        font-weight: 200;
-        font-size: 11px;
-        letter-spacing: 2px;
-    }
-    .Creditos a {
-        text-decoration: none;
-        color: white;
-        transition: 0.5s ease;
-    }
-    .Creditos a:hover {
-        color: #06A1B4;
-    }
-}
-@media (min-width: 416px) and (max-width: 766px) {
-    .Creditos { 
-        position: fixed;
-        width: 100%;
-        height: 40px;
-        bottom: 0px;
-        text-align: center;
-        background-color: rgb(0, 0, 0);
-        z-index: 999;
-    }
-    .Creditos h3 {
-        font-family: 'Geosanslight', sans-serif;
-        font-weight: 200;
-        font-size: 11px;
-        letter-spacing: 2px;
-    }
-    .Creditos a {
-        text-decoration: none;
-        color: white;
-        transition: 0.5s ease;
-    }
-    .Creditos a:hover {
-        color: #06A1B4;
-    }
+/* =============================================
+   FOOTER — Mobile-First
+   ============================================= */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--black);
+  z-index: 999;
+  padding: var(--space-sm) var(--space-md);
 }
 
-@media (min-width: 769px) and (max-width: 1359px) {
-    .Creditos { 
-        display: block;
-        position: fixed;
-        width: 100%;
-        height: 50px;
-        bottom: 0px;
-        text-align: center;
-        background-color: rgb(0, 0, 0);
-        z-index: 999;
-    }
-    .Creditos h3 {
-        font-family: 'Geosanslight', sans-serif;
-        font-weight: 200;
-        font-size: 12px;
-        letter-spacing: 2px;
-    }
-    .Creditos a {
-        text-decoration: none;
-        color: white;
-        transition: 0.5s ease;
-    }
-    .Creditos a:hover {
-        color: #06A1B4;
-    }
+.footer__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-@media (min-width: 1360px) and (max-width: 1600px) {
-    .Creditos { 
-        display: block;
-        position: fixed;
-        width: 100%;
-        height: 50px;
-        bottom: 0px;
-        text-align: center;
-        background-color: rgb(0, 0, 0);
-        z-index: 999;
-    }
-    .Creditos h3 {
-        font-family: 'Geosanslight', sans-serif;
-        font-weight: 200;
-        font-size: 12px;
-        letter-spacing: 2px;
-    }
-    .Creditos a {
-        text-decoration: none;
-        color: white;
-        transition: 0.5s ease;
-    }
-    .Creditos a:hover {
-        color: #06A1B4;
-    }
+.footer__link {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color var(--duration-fast) ease;
+  display: inline-block;
+  padding: var(--space-xs) 0;
 }
-@media (min-width: 1601px) and (max-width: 1920px) {
-    .Creditos { 
-        display: block;
-        position: fixed;
-        width: 100%;
-        height: 70px;
-        bottom: 0px;
-        text-align: center;
-        background-color: rgb(0, 0, 0);
-        z-index: 999;
-    }
-    .Creditos h3 {
-        font-family: 'Geosanslight', sans-serif;
-        font-weight: 200;
-        padding-top: 5px;
-        font-size: 14px;
-        letter-spacing: 2px;
-    }
-    .Creditos a {
-        text-decoration: none;
-        color: white;
-        transition: 0.5s ease;
-    }
-    .Creditos a:hover {
-        color: #06A1B4;
-    }
+
+.footer__link:hover {
+  color: var(--teal);
 }
-      /*  SMARTPHONE PORTRAIT QUERY
-        @media (min-width: 300px) and (max-width: 350px) {}
 
-          @media (min-width: 351px) and (max-width: 415px) {}
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .footer {
+    padding: var(--space-sm) var(--space-xl);
+  }
 
-            @media (min-width: 416px) and (max-width: 766px) {}
+  .footer__link {
+    font-size: 0.75rem;
+  }
+}
 
-              /*  SMARTPHONE LANDSCAPE QUERY
-                 @media (min-width: 768px) and (max-width: 1359px)
-                   /*  DESKTOP HALF HD QUERY
-                    @media (min-width: 1360px) and (max-width: 1600px) 
-                        /*  DESKTOP FULL HD QUERY
-                          @media (min-width: 1601px) and (max-width: 1920px) 
-                            /*  DESKTOP 2K HD QUERY 
-                              @media (min-width: 1921px) and (max-width: 2440px) {}
-                                /*  DESKTOP 4K HD QUERY
-                                  @media (min-width: 2441px) and (max-width: 3820px) {}
-                                */
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .footer__link {
+    font-size: 0.8rem;
+    letter-spacing: 2.5px;
+  }
+}

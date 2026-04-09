@@ -12,11 +12,11 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
   const [step, setStep] = useState(1);
   const { user } = useAuth();
   const { error, success, showError, showSuccess } = useAlert();
-  const baseURL = process.env.REACT_APP_API_BASE_URL;
+  const baseURL = process.env.REACT_APP_LOCAL_API_URL;
   const [procedures, setProcedures] = useState([]);
   const [appointmentDetails, setAppointmentDetails] = useState({
     procedimento: '',
-    date: '',
+    date: null,
     horario: '',
     userName: '',
     valor: '',
@@ -24,7 +24,7 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
   });
   const [recommendedAppointments, setRecommendedAppointments] = useState([]);
   const [availableTimes, setAvailableTimes] = useState([]);
-  const [loadingTimes, setLoadingTimes] = useState(false); // Indica carregamento de horários
+  const [loadingTimes, setLoadingTimes] = useState(false);
 
   useEffect(() => {
     const fetchProcedures = async () => {
@@ -67,8 +67,8 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
     setAppointmentDetails((prev) => ({
       ...prev,
       procedimento,
-      valor: selectedProcedure?.valor || '', // Atribui o valor do procedimento
-      userName: user?.name || '', // Atribui o nome do usuário
+      valor: selectedProcedure?.valor || '',
+      userName: user?.name || '',
     }));
     setStep(2);
   };
@@ -80,9 +80,9 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
 
   const fetchAvailableTimes = async (date) => {
     try {
-      setLoadingTimes(true); // Inicia carregamento
+      setLoadingTimes(true);
       const formattedDate = date.toISOString().split('T')[0];
-      const response = await axios.get(`${baseURL}/api/horarios-disponiveis`, {
+      const response = await axios.get(`${baseURL}/api/horariosdisponiveis`, {
         params: { date: formattedDate, procedure: appointmentDetails.procedimento }
       });
       if (response.status === 200) {
@@ -92,7 +92,7 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
       console.error('Erro ao buscar horários disponíveis:', error);
       showError('Erro ao buscar horários disponíveis.');
     } finally {
-      setLoadingTimes(false); // Conclui carregamento
+      setLoadingTimes(false);
     }
   };
 
@@ -103,12 +103,7 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
 
   const criarAgendamentoAPI = async (appointmentDetails) => {
     try {
-      console.log("Dados enviados para a API:", appointmentDetails);
       const response = await axios.post(`${baseURL}/api/agendamentos`, appointmentDetails);
-  
-      console.log("Resposta da API:", response.data); // Verifica o conteúdo da resposta
-  
-      // Verifica se a mensagem de sucesso está presente na resposta
       if (response.data.message === 'Agendamento criado com sucesso') {
         return { success: true };
       } else {
@@ -119,40 +114,33 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
       return { success: false, error: error.message };
     }
   };
-  
+
   const handleSubmit = async () => {
     try {
       showSuccess('Aguarde...');
       const response = await criarAgendamentoAPI(appointmentDetails);
-  
       if (response.success) {
         showSuccess('Agendamento concluído com sucesso!');
-        // Fecha o modal e atualiza a página
         setTimeout(() => {
-          window.location.reload(); // Atualiza a página para mostrar o agendamento atualizado
-        }, 1500); // Delay opcional para o usuário ver a mensagem de sucesso
+          window.location.reload();
+        }, 1500);
       } else {
         showError(response.error || 'Ocorreu um erro. Tente novamente.');
       }
     } catch (error) {
       showError('Erro no agendamento. Verifique os dados e tente novamente.');
     }
-  };  
+  };
 
   const isSunday = (date) => date.getDay() === 0;
-
-  const handleBack = () => {
-    if (step > 1) {
-      setStep(step - 1);
-    }
-  };
+  const handleBack = () => step > 1 && setStep(step - 1);
 
   return (
     isOpen && (
       <div className="modal">
         <div className="modal-header">
           <h2>Agendamento</h2>
-          <a href="/agendamentos"><img src={exitIcon} alt="Fechar" id='exitIcon'/></a>
+          <a href="/agendamentos"><img src={exitIcon} alt="Fechar" id='exitIcon' /></a>
         </div>
         <div className="modal-body">
           {step === 1 && (
@@ -171,13 +159,17 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
               </div>
             </div>
           )}
+
           {step === 2 && (
             <div>
               <h3>Selecione Data e Horário</h3>
-                <h4>Datas Recomendadas</h4>
-                <div className='dates-grid'>
-                {recommendedAppointments.map((appointment, index) => (
-                  <button key={index} onClick={() => handleDateSelect(new Date(appointment.date))}>
+              <h4>Datas Recomendadas</h4>
+              <div className='dates-grid'>
+                {recommendedAppointments.map((appointment) => (
+                  <button
+                    key={`${appointment.date}-${appointment.horario}`}
+                    onClick={() => handleDateSelect(new Date(appointment.date))}
+                  >
                     {new Date(appointment.date).toLocaleDateString()} - {appointment.horario}
                   </button>
                 ))}
@@ -185,7 +177,7 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
               <h4>Ou selecione uma data:</h4>
               <DatePicker
                 selected={appointmentDetails.date}
-                onChange={(date) => handleDateSelect(date)}
+                onChange={handleDateSelect}
                 filterDate={(date) => !isSunday(date)}
                 dateFormat="dd/MM/yyyy"
                 placeholderText='Selecione uma data específica'
@@ -194,38 +186,36 @@ const AgendamentoModal = ({ isOpen, onClose }) => {
               <div className='times-grid'>
                 <h4>Horários Disponíveis</h4>
                 <div>
-                {loadingTimes ? (
-                  <p>Carregando horários...</p>
-                ) : (
-                  availableTimes.map((horario, idx) => (
-                    <button key={idx} onClick={() => handleTimeSelect(horario)}>
-                      {horario}
-                    </button>
-                  ))
-                )}
+                  {loadingTimes ? (
+                    <p>Carregando horários...</p>
+                  ) : (
+                    availableTimes.map((horario, idx) => (
+                      <button key={`${horario}-${idx}`} onClick={() => handleTimeSelect(horario)}>
+                        {horario}
+                      </button>
+                    ))
+                  )}
                 </div>
               </div>
             </div>
           )}
+
           {step === 3 && (
-            <div className='details-div'>
-              <div className='details-agendamento'>
-                <h3>Confirme os Detalhes</h3>
-                <p>Serviço: {appointmentDetails.procedimento}</p>
-                <p>Data: {new Date(appointmentDetails.date).toLocaleDateString()}</p>
-                <p>Horário: {appointmentDetails.horario}</p>
-                <p>Paciente: {user.name}</p>
+            <div>
+              <h3>Confirme os dados:</h3>
+              <p><strong>Procedimento:</strong> {appointmentDetails.procedimento}</p>
+              <p><strong>Data:</strong> {appointmentDetails.date?.toLocaleDateString()}</p>
+              <p><strong>Horário:</strong> {appointmentDetails.horario}</p>
+              <p><strong>Valor:</strong> R$ {appointmentDetails.valor}</p>
+              <div className='confirm-buttons'>
+                <button onClick={handleBack}>Voltar</button>
+                <button onClick={handleSubmit}>Confirmar</button>
               </div>
-              <button onClick={handleSubmit}>Confirmar Agendamento</button>
             </div>
           )}
         </div>
-        <div className="modal-footer">
-          {step > 1 && (
-            <button onClick={handleBack} id='backBtn'>Voltar</button>
-          )}
-        </div>
-        <AlertSystem error={error} success={success} />
+        {error && <AlertSystem type="error" message={error} />}
+        {success && <AlertSystem type="success" message={success} />}
       </div>
     )
   );

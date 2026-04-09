@@ -1,20 +1,22 @@
-// server.js
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+// Importar rotas
 const userRoutes = require('./routes/userRoutes');
 const agendamentoRoutes = require('./routes/agendamentoRoutes');
 const proceduresRoutes = require('./routes/procedures');
+const horarioRoutes = require('./routes/horarioRoutes');
+const recomendacaoRoutes = require('./routes/recomendacaoRoutes');
 
 const app = express();
+const PORT = process.env.PORT || 10000;
 
 // Middleware
-const allowedOrigins = ['https://miguel-react.vercel.app'];
-
+const allowedOrigins = ['https://miguel-react.vercel.app', 'http://localhost:3000'];
 app.use(cors({
-  origin: function (origin, callback) {
+  origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -25,18 +27,19 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// Conectar ao banco de dados MongoDB
+// Conexão com MongoDB
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('Conectado ao MongoDB'))
-  .catch(err => console.error('Erro ao conectar ao MongoDB:', err));
+  .then(() => console.log('✅ Conectado ao MongoDB'))
+  .catch(err => console.error('❌ Erro ao conectar ao MongoDB:', err));
 
-// Rotas
+// Rotas da API
 app.use('/api/users', userRoutes);
 app.use('/api/agendamentos', agendamentoRoutes);
 app.use('/api/procedures', proceduresRoutes);
+app.use('/api/horariosdisponiveis', horarioRoutes);
+app.use('/api/recomendacoes', recomendacaoRoutes);
 
-// Iniciar o servidor
-const PORT = process.env.PORT || 10000;
+// Start
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });

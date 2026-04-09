@@ -7,42 +7,63 @@ import Aulas from "../assets/heroslider/foto.jpg";
 import './styles/heroSlider.css';
 
 const flickityOptions = {
-    wrapAround: true,
-    autoPlay: 6000,
-    pauseAutoPlayOnHover: true,
-    prevNextButtons: true,
-    contain: true, 
-    initialIndex: 1
+  wrapAround: true,
+  autoPlay: 6000,
+  pauseAutoPlayOnHover: true,
+  prevNextButtons: true,
+  contain: true,
+  initialIndex: 1,
+  cellAlign: 'center',
 };
 
-const HeroSlider = () => {
-    const slides = [
-        { image: Aulas, id: 'Aulas' , header: "Cursos e Mentorias", text: "Aulas", link: "https://hotmart.com/pt-br/marketplace/produtos?initialSelectedCategory=&q=Miguel+Iugas", buttonText: "Aprender mais!" },
-        { image: Consultoria, id: 'Consultoria' , header: "Agendamento", text: "Consultoria", link: "/Login", buttonText: "Saiba mais!" },
-        { image: Agenda, id: 'Agenda' , header: "Lives e Palestras", text: "Agenda", link: "https://www.instagram.com/migueliugas/", buttonText: "Calendário!" },
-    ];
+const slides = [
+  {
+    image: Aulas,
+    id: 'Aulas',
+    header: 'Cursos e Mentorias',
+    text: 'Aulas',
+    link: 'https://hotmart.com/pt-br/marketplace/produtos?initialSelectedCategory=&q=Miguel+Iugas',
+    buttonText: 'Aprender mais!',
+  },
+  {
+    image: Consultoria,
+    id: 'Consultoria',
+    header: 'Agendamento',
+    text: 'Consultoria',
+    link: '/#Agendar',
+    buttonText: 'Agendar agora!',
+  },
+  {
+    image: Agenda,
+    id: 'Agenda',
+    header: 'Lives e Palestras',
+    text: 'Agenda',
+    link: 'https://www.instagram.com/migueliugas/',
+    buttonText: 'Calendário!',
+  },
+];
 
-    return (
-        <Flickity className={'hero-slider'} elementType={'div'} options={flickityOptions} reloadOnUpdate>
-            {slides.map((slide, index) => (
-                <div
-                    key={index}
-                    className={`carousel-cell `}
-                    style={{ backgroundImage: `url(${slide.image})`, backgroundColor: '#f4f4f4', backgroundSize: 'cover', backgroundPosition: 'center' }}
-                >
-                    <div className="info-container">
-                        <h3 className="header">{slide.header}</h3>
-                        <h2 className="text">{slide.text}</h2>
-                        <a href={slide.link} rel="noreferrer">
-                            <button>{slide.buttonText}</button>
-                        </a>
-                    </div>
-                </div>
-            ))}
-        </Flickity>
-    );
-};
-
-
+const HeroSlider = () => (
+  <section className="slider" aria-label="Destaques">
+    <Flickity className="slider__track" elementType="div" options={flickityOptions} reloadOnUpdate>
+      {slides.map((slide, i) => (
+        <div
+          key={i}
+          className="slider__cell"
+          style={{ backgroundImage: `url(${slide.image})` }}
+        >
+          <div className="slider__overlay" />
+          <div className="slider__content">
+            <span className="slider__label">{slide.header}</span>
+            <h2 className="slider__title">{slide.text}</h2>
+            <a href={slide.link} rel="noreferrer" className="slider__btn">
+              {slide.buttonText}
+            </a>
+          </div>
+        </div>
+      ))}
+    </Flickity>
+  </section>
+);
 
 export default HeroSlider;

@@ -1,10 +1,20 @@
-// models/HorariosDisponiveis.js
 const mongoose = require('mongoose');
 
-const HorarioDisponivelSchema = new mongoose.Schema({
-  nomeProcedimento: { type: String, required: true, unique: true },
-  data: { type: Date, required: true },
-  horariosDisponiveis: { type: [String], required: true },
+const horariosDisponiveisSchema = new mongoose.Schema({
+  nomeProcedimento: {
+    type: String,
+    required: true,
+  },
+  data: {
+    type: String,
+    required: true,
+  },
+  horariosDisponiveis: {
+    type: [String], 
+    required: true,
+  },
+}, {
+  timestamps: true
 });
 
-module.exports = mongoose.model('HorariosDisponiveis', HorarioDisponivelSchema);
+module.exports = mongoose.model('HorariosDisponiveis', horariosDisponiveisSchema);

@@ -1,46 +1,149 @@
-.Contato {
-    background-color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 0px;
-    margin: 0 auto;
-    color: white;
-    padding-top: 20px;
-    padding-bottom: 100px;
-}
-.Contato h3 {
-    font-family: 'Geosanslight', sans-serif;
-    font-size: 18px;
-    letter-spacing: 2px;
-}
-.fone-mail a {
-    font-family: 'Geosanslight', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    text-decoration: none;
-    color: white;
-}
-.fone-mail hr {
-    width: 50px;
-}
-.social-icons {
-    font-family: 'Geosanslight', sans-serif;
+/* =============================================
+   CONTATO — Mobile-First
+   ============================================= */
 
-    font-size: 18px;
-    margin-top: 10px;
-    letter-spacing: 2px;
-    display: inline-block;
-    transition: 0.5s all;
-    transform: 1s ease;
-}
-#Facebook:hover, #Instagram:hover, #Whatsapp:hover {
-    transform: translateY(-10px);
-    filter: drop-shadow(2px 0px 3px rgb(255, 255, 255));
+.contato {
+  background: var(--black);
+  color: var(--white);
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
 }
 
-#Facebook, #Instagram, #Whatsapp {
-    transition: 0.5s all;
-    transform: 1s ease;
-    padding: 0 10px 0 10px;
-    width: 48px;
-    height: 48px;
+.contato__container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contato__title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  margin-bottom: var(--space-lg);
+  color: var(--white);
+}
+
+/* Contact channels */
+.contato__channels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.contato__channel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--gray-300);
+  transition: color var(--duration-fast) ease;
+  text-decoration: none;
+}
+
+.contato__channel:hover {
+  color: var(--cyan);
+}
+
+.contato__icon {
+  font-size: 1.3em;
+}
+
+.contato__label {
+  letter-spacing: 1px;
+}
+
+/* Divider */
+.contato__divider {
+  width: 50px;
+  height: 1px;
+  background: var(--gray-600);
+  margin: 0 auto var(--space-lg);
+}
+
+/* CTA */
+.contato__cta {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: var(--gray-300);
+  margin-bottom: var(--space-md);
+}
+
+/* Social Icons */
+.contato__social {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.contato__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  transition: background var(--duration-fast) ease,
+              transform var(--duration-fast) var(--ease-spring);
+}
+
+.contato__social-link:hover {
+  background: var(--accent);
+  transform: translateY(-4px);
+}
+
+.contato__social-link img {
+  width: 26px;
+  height: 26px;
+  filter: brightness(0) invert(1);
+}
+
+/* =============================================
+   TABLET (768px+)
+   ============================================= */
+@media (min-width: 768px) {
+  .contato {
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  .contato__title {
+    font-size: 2.2rem;
+  }
+
+  .contato__channels {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-xl);
+  }
+
+  .contato__channel {
+    font-size: 1.05rem;
+  }
+}
+
+/* =============================================
+   DESKTOP (1024px+)
+   ============================================= */
+@media (min-width: 1024px) {
+  .contato {
+    padding: var(--space-3xl) var(--space-xl);
+  }
+
+  .contato__title {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+
+  .contato__social-link {
+    width: 56px;
+    height: 56px;
+  }
+
+  .contato__social-link img {
+    width: 28px;
+    height: 28px;
+  }
 }
